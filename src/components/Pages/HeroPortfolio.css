@@ -1,0 +1,15 @@
+@keyframes shinyText {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.animate-shinyText {
+  background-size: 200% 200%;
+  background-image: linear-gradient(90deg, #ff00d4, #00d4ff, #ff00d4);
+  color: transparent;
+  animation: shinyText 15s linear infinite;
+}
