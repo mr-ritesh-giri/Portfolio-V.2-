@@ -1,37 +1,49 @@
 import React from "react";
-import { FaGithub, FaLinkedin, FaTwitter, FaRegEnvelope } from "react-icons/fa";
+import {
+  FaGithub,
+  FaLinkedin,
+  FaTwitter,
+  FaRegCommentDots,
+} from "react-icons/fa";
 import "./HeroPortfolio.css";
+
+const socialLinks = [
+  { icon: <FaGithub />, name: "GitHub" },
+  { icon: <FaLinkedin />, name: "LinkedIn" },
+  { icon: <FaTwitter />, name: "Twitter" },
+];
 
 function HeroPortfolio() {
   return (
-    <div className="w-full h-screen flex flex-col justify-center items-start text-white p-6">
-      <h1 className="text-8xl mb-5">👋I'm Ritesh</h1>
+    <div className="w-full h-screen flex flex-col justify-center items-start text-white">
+      <h1 className="text-8xl mb-7">👋I'm Ritesh</h1>
 
-      <h1 className="text-7xl font-semibold text-transparent mb-8 bg-clip-text bg-gradient-to-r from-violet-500 via-gray-500 to-white animate-shinyText">
+      <h1 className="text-[70px] font-semibold text-transparent mb-10 bg-clip-text bg-gradient-to-r from-violet-500 via-gray-500 to-white animate-shinyText">
         FrontEnd Developer
       </h1>
 
-      <p className="text-[20px] mb-2">Welcome to my Digital Playground</p>
-      <p className="text-[20px]">
+      <p className="text-[18px] text-gray-300">
+        Welcome to my Digital Playground
+      </p>
+      <p className="text-[18px] text-gray-300">
         Software Engineer by Day, UI/UX Enthusiast by Night
       </p>
 
-      <div className="flex mt-7 space-x-6">
+      <div className="flex mt-8 space-x-4">
         {/* Contact Button */}
-        <button className="px-6 py-2 border-2 border-violet-500 text-violet-500 hover:bg-violet-500 hover:text-white rounded-[30px] flex items-center gap-2 transition duration-300 ease-in-out">
-          Contact <FaRegEnvelope className="text-violet-500 ml-2" />
+        <button className="px-4 py-2 border-2 text-lg border-violet-500 text-white font-semibold hover:bg-violet-500 hover:text-white rounded-[30px] flex items-center gap-2 transition duration-300 ease-in-out">
+          Let’s Connect <FaRegCommentDots className="ml-2" />
         </button>
 
         {/* Social Media Icons */}
-        <span className="flex items-center gap-2 text-white hover:text-gray-300 cursor-pointer transition duration-300">
-          <FaGithub /> 
-        </span>
-        <span className="flex items-center gap-2 text-white hover:text-gray-300 cursor-pointer transition duration-300">
-          <FaLinkedin /> 
-        </span>
-        <span className="flex items-center gap-2 text-white hover:text-gray-300 cursor-pointer transition duration-300">
-          <FaTwitter /> 
-        </span>
+        {socialLinks.map((social, index) => (
+          <span
+            key={index}
+            className="flex items-center justify-center w-12 h-12 text-3xl gap-2 border border-violet-500 rounded-full p-2 text-white hover:text-gray-300 hover:scale-110 cursor-pointer transition duration-300"
+          >
+            {social.icon}
+          </span>
+        ))}
       </div>
     </div>
   );
