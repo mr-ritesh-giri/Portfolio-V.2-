@@ -37,7 +37,7 @@ function Iphone() {
         {/* Screen (empty white background) */}
         <div className="rounded-[2rem] relative overflow-hidden w-full h-full">
           {/* Empty screen */}
-          <div className="w-[1250px]">
+          <div className="w-[1150px]">
             <MeteorWall className="absolute inset-0 z-0" />
             <div className="absolute inset-0 z-10 p-6">
               {/* Apps Grid */}

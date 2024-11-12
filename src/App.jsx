@@ -4,26 +4,26 @@ import HeroPortfolio from "./components/Pages/HeroPortfolio";
 import Spline from "@splinetool/react-spline";
 
 function App() {
-  useEffect(() => {
-    const handleKeyPress = (e) => {
-      if (e.key === "F12") {
-        e.preventDefault();
-      }
-    };
+  // useEffect(() => {
+  //   const handleKeyPress = (e) => {
+  //     if (e.key === "F12") {
+  //       e.preventDefault();
+  //     }
+  //   };
 
-    const handleRightClick = (e) => {
-      e.preventDefault();
-    };
+  //   const handleRightClick = (e) => {
+  //     e.preventDefault();
+  //   };
 
-    window.addEventListener("keydown", handleKeyPress);
+  //   window.addEventListener("keydown", handleKeyPress);
 
-    window.addEventListener("contextmenu", handleRightClick);
+  //   window.addEventListener("contextmenu", handleRightClick);
 
-    return () => {
-      window.removeEventListener("keydown", handleKeyPress);
-      window.removeEventListener("contextmenu", handleRightClick);
-    };
-  }, []);
+  //   return () => {
+  //     window.removeEventListener("keydown", handleKeyPress);
+  //     window.removeEventListener("contextmenu", handleRightClick);
+  //   };
+  // }, []);
 
   return (
     <div className="relative flex h-screen bg-black">
