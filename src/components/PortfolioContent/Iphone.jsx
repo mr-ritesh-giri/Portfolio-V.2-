@@ -7,7 +7,7 @@ function Iphone() {
     { title: "About", imgSrc: "public/freelancer.png" },
     { title: "Skills", imgSrc: "public/skill.png" },
     { title: "Mobile", imgSrc: "public/mobile-app.webp" },
-    { title: "Tik-Tak-Toe", imgSrc: "public/tic-tac-toe-svgrepo-com.svg" },
+    { title: "Tik Tak Toe", imgSrc: "public/tic-tac-toe-svgrepo-com.svg" },
     { title: "Tools", imgSrc: "public/tools-and-utensils.png" },
     { title: "GitHub", imgSrc: "public/512x512-logo-27148.png" },
     { title: "X", imgSrc: "public/twitter-x-logo-42554.png" },
@@ -43,7 +43,10 @@ function Iphone() {
               {/* Apps Grid */}
               <div className="grid grid-cols-5 gap-5 mt-8">
                 {apps.map((app, index) => (
-                  <div key={index} className="flex flex-col items-center">
+                  <div
+                    key={index}
+                    className="flex flex-col items-center hover:scale-105"
+                  >
                     {/* Image (App Icon) */}
                     <div className="w-12 h-12 mb-2 bg-white flex justify-center items-center rounded-[12px]">
                       <img

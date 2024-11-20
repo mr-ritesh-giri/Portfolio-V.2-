@@ -2,6 +2,8 @@ import React, { useEffect } from "react";
 import Iphone from "./components/PortfolioContent/Iphone";
 import HeroPortfolio from "./components/Pages/HeroPortfolio";
 import Spline from "@splinetool/react-spline";
+import Projects from "./components/PortfolioContent/Projects";
+import "./App.css";
 
 function App() {
   // useEffect(() => {
@@ -39,7 +41,7 @@ function App() {
           <Spline scene="https://prod.spline.design/DVe8fLgj4Kw25-rZ/scene.splinecode" />
           <div className="absolute bottom-0 right-0 w-full h-16 bg-black z-10"></div>
         </div>
-        <div className="bg-white h-[100vh] w-full"></div>
+        <Projects />
       </div>
     </div>
   );

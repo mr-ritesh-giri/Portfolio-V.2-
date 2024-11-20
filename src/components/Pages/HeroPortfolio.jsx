@@ -16,9 +16,9 @@ const socialLinks = [
 function HeroPortfolio() {
   return (
     <div className="w-full h-screen flex flex-col justify-center items-start text-white">
-      <h1 className="text-8xl mb-7">👋I'm Ritesh</h1>
+      <h1 className="text-8xl mb-10">👋I'm Ritesh</h1>
 
-      <h1 className="text-[70px] font-semibold text-transparent mb-10 bg-clip-text bg-gradient-to-r from-violet-500 via-gray-500 to-white animate-shinyText">
+      <h1 className="text-7xl font-semibold text-transparent mb-14 bg-clip-text bg-gradient-to-r from-violet-500 via-gray-500 to-white animate-shinyText whitespace-nowrap">
         FrontEnd Developer
       </h1>
 
