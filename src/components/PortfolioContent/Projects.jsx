@@ -1,15 +1,21 @@
-import React, { useCallback, useState } from "react";
+import React, { useState, useRef, useCallback } from "react";
+import { gsap } from "gsap";
 
 const Projects = () => {
   const [isHover, setIsHover] = useState(false);
-  const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
+  const imageRef = useRef(null);
 
   const handleMouseMove = useCallback((e) => {
     const bounds = e.currentTarget.getBoundingClientRect();
 
-    setCursorPosition({
-      x: e.clientX - bounds.left,
-      y: e.clientY - bounds.top,
+    const x = e.clientX - bounds.left;
+    const y = e.clientY - bounds.top;
+
+    gsap.to(imageRef.current, {
+      x: x - 0,
+      y: y - 260,
+      duration: 1.8,
+      ease: "power3.out",
     });
   }, []);
 
@@ -39,17 +45,18 @@ const Projects = () => {
         </div>
         {isHover ? (
           <div
-            className="absolute"
+            ref={imageRef}
+            className="absolute pointer-events-none"
             style={{
-              top: `${cursorPosition.y - 200}px`,
-              left: `${cursorPosition.x - 150}px`,
-              transition: "0.1s ease-out, left 0.1s ease-out",
+              width: "18rem",
+              height: "11rem",
+              transform: "translate(-50%, -50%)",
             }}
           >
             <img
-              src="\public\WarrantEase.png"
+              src="/public/WarrantEase.png"
               alt="WarrantEase"
-              className="w-72 h-44 rounded-lg shadow-lg"
+              className="w-full h-full rounded-lg shadow-lg"
             />
           </div>
         ) : null}
@@ -59,5 +66,3 @@ const Projects = () => {
 };
 
 export default Projects;
-
-// I will add some screenshots too here.So there will be a screen coming from the bottom which will contain all the info about the project like screnshots, description etc.
