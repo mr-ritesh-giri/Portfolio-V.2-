@@ -1,9 +1,10 @@
+import "./App.css";
 import React, { useEffect } from "react";
+import Spline from "@splinetool/react-spline";
 import Iphone from "./components/PortfolioContent/Iphone";
 import HeroPortfolio from "./components/Pages/HeroPortfolio";
-import Spline from "@splinetool/react-spline";
 import Projects from "./components/PortfolioContent/Projects";
-import "./App.css";
+import Technologies from "./components/PortfolioContent/Technologies";
 
 function App() {
   // useEffect(() => {
@@ -42,6 +43,7 @@ function App() {
           <div className="absolute bottom-0 right-0 w-full h-16 bg-black z-10"></div>
         </div>
         <Projects />
+        <Technologies />
       </div>
     </div>
   );
