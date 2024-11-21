@@ -1,33 +1,33 @@
 import "./App.css";
 import React, { useEffect } from "react";
 import Spline from "@splinetool/react-spline";
-import Iphone from "./components/PortfolioContent/Iphone";
+import Iphone from "./components/Pages/Iphone";
 import HeroPortfolio from "./components/Pages/HeroPortfolio";
-import Projects from "./components/PortfolioContent/Projects";
-import Technologies from "./components/PortfolioContent/Technologies";
-import About from "./components/PortfolioContent/About";
+import Projects from "./components/Pages/Projects";
+import Technologies from "./components/Pages/Technologies";
+import About from "./components/Pages/About";
 
 function App() {
-  // useEffect(() => {
-  //   const handleKeyPress = (e) => {
-  //     if (e.key === "F12") {
-  //       e.preventDefault();
-  //     }
-  //   };
+  useEffect(() => {
+    const handleKeyPress = (e) => {
+      if (e.key === "F12") {
+        e.preventDefault();
+      }
+    };
 
-  //   const handleRightClick = (e) => {
-  //     e.preventDefault();
-  //   };
+    const handleRightClick = (e) => {
+      e.preventDefault();
+    };
 
-  //   window.addEventListener("keydown", handleKeyPress);
+    window.addEventListener("keydown", handleKeyPress);
 
-  //   window.addEventListener("contextmenu", handleRightClick);
+    window.addEventListener("contextmenu", handleRightClick);
 
-  //   return () => {
-  //     window.removeEventListener("keydown", handleKeyPress);
-  //     window.removeEventListener("contextmenu", handleRightClick);
-  //   };
-  // }, []);
+    return () => {
+      window.removeEventListener("keydown", handleKeyPress);
+      window.removeEventListener("contextmenu", handleRightClick);
+    };
+  }, []);
 
   return (
     <div className="relative flex h-screen bg-black">

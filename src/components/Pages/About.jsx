@@ -22,7 +22,7 @@ const About = () => {
 
   return (
     <div className="flex flex-col justify-center items-center h-screen w-full bg-white text-black">
-      <h1 className="text-3xl mb-5 text-left text-gray-400 leading-tight">
+      <h1 className="text-3xl mb-5 text-left text-gray-500 leading-tight">
         Want to{" "}
         <span className="text-violet-500 font-semibold">Collaborate</span>?
       </h1>
@@ -45,7 +45,7 @@ const About = () => {
       </div>
       <div className="text-center text-gray-500 max-w-[500px]">
         <p className="mb-2">
-          © Ben Böckmann 2024. All rights reserved. Location: Germany
+          © Ritesh Giri 2024. All rights reserved. Location: India
         </p>
         <p>
           This site showcases my personal projects and professional work.

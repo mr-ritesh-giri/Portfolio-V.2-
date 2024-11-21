@@ -5,22 +5,15 @@ import { Draggable } from "gsap/Draggable";
 gsap.registerPlugin(Draggable);
 
 const Technologies = () => {
-  const [isRendered, setIsRendered] = useState(false);
-
   useEffect(() => {
-    setIsRendered(true);
-    console.log(isRendered);
-    
-    if (isRendered) {
-      Draggable.create(".draggable", {
-        bounds: window,
-        inertia: true,
-      });
-    }
-  }, [isRendered]);
+    Draggable.create(".draggable", {
+      bounds: ".container",
+      inertia: true,
+    });
+  }, []);
 
   return (
-    <div className="h-screen w-full bg-black p-8 flex flex-col">
+    <div className="container h-screen w-full bg-black p-8 flex flex-col">
       {/* Heading Section */}
       <div className="mb-16">
         <h1 className="text-7xl mb-14 text-left text-white leading-tight">

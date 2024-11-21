@@ -11,12 +11,14 @@ const Projects = () => {
       title: "WarrantEase",
       description: "Front-End Development / Maintenance Tracking Tool",
       image: "/public/Project/WarrantEase.png",
+      link: "https://warrantease.netlify.app/",
     },
     {
       id: 2,
       title: "Portfolio",
       description: "Front-End Development / Personal Portfolio",
       image: "/public/Project/Portfolio.png",
+      link: "https://warrantease.netlify.app/",
     },
   ];
 
