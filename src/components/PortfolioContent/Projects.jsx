@@ -54,7 +54,7 @@ const Projects = () => {
             }}
           >
             <img
-              src="/public/WarrantEase.png"
+              src="/public/App/WarrantEase.png"
               alt="WarrantEase"
               className="w-full h-full rounded-lg shadow-lg"
             />

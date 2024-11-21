@@ -2,19 +2,21 @@ import React from "react";
 import { MeteorWall } from "../AnimatedUi/MeteorWall";
 
 function Iphone() {
-  // Array of apps data
   const apps = [
-    { title: "About", imgSrc: "public/freelancer.png" },
-    { title: "Skills", imgSrc: "public/skill.png" },
-    { title: "Mobile", imgSrc: "public/mobile-app.webp" },
-    { title: "Tik Tak Toe", imgSrc: "public/tic-tac-toe-svgrepo-com.svg" },
-    { title: "Tools", imgSrc: "public/tools-and-utensils.png" },
-    { title: "GitHub", imgSrc: "public/512x512-logo-27148.png" },
-    { title: "X", imgSrc: "public/twitter-x-logo-42554.png" },
-    { title: "LinkedIn", imgSrc: "public/linkedin-logo-png-1854.png" },
-    { title: "WhatsApp", imgSrc: "public/whatsapp-logo-png-2260.png" },
-    { title: "Password Generator", imgSrc: "public/password-svgrepo-com.svg" },
-    { title: "Youtube", imgSrc: "public/youtube-color-svgrepo-com.svg" },
+    { title: "About", imgSrc: "public/App/freelancer.png" },
+    { title: "Skills", imgSrc: "public/App/skill.png" },
+    { title: "Mobile", imgSrc: "public/App/mobile-app.webp" },
+    { title: "Tik Tak Toe", imgSrc: "public/App/tic-tac-toe-svgrepo-com.svg" },
+    { title: "Tools", imgSrc: "public/App/tools-and-utensils.png" },
+    { title: "GitHub", imgSrc: "public/App/512x512-logo-27148.png" },
+    { title: "X", imgSrc: "public/App/twitter-x-logo-42554.png" },
+    { title: "LinkedIn", imgSrc: "public/App/linkedin-logo-png-1854.png" },
+    { title: "WhatsApp", imgSrc: "public/App/whatsapp-logo-png-2260.png" },
+    {
+      title: "Password Generator",
+      imgSrc: "public/App/password-svgrepo-com.svg",
+    },
+    { title: "Youtube", imgSrc: "public/App/youtube-color-svgrepo-com.svg" },
   ];
 
   return (
@@ -41,7 +43,7 @@ function Iphone() {
             <MeteorWall className="absolute inset-0 z-0" />
             <div className="absolute inset-0 z-10 p-6">
               {/* Apps Grid */}
-              <div className="grid grid-cols-5 gap-5 mt-8">
+              <div className="grid grid-cols-4 gap-5 mt-8">
                 {apps.map((app, index) => (
                   <div
                     key={index}
