@@ -1,16 +1,23 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { gsap } from "gsap";
 import { Draggable } from "gsap/Draggable";
 
 gsap.registerPlugin(Draggable);
 
 const Technologies = () => {
+  const [isRendered, setIsRendered] = useState(false);
+
   useEffect(() => {
-    Draggable.create(".draggable", {
-      bounds: window,
-      inertia: true,
-    });
-  }, []);
+    setIsRendered(true);
+    console.log(isRendered);
+    
+    if (isRendered) {
+      Draggable.create(".draggable", {
+        bounds: window,
+        inertia: true,
+      });
+    }
+  }, [isRendered]);
 
   return (
     <div className="h-screen w-full bg-black p-8 flex flex-col">
@@ -64,6 +71,11 @@ const Technologies = () => {
               img: "/public/Tech/LocomotiveJs.png",
               name: "Locomotive JS",
               description: "Scroll",
+            },
+            {
+              img: "/public/Tech/Git.svg",
+              name: "Git",
+              description: "Version",
             },
           ].map((tech, index) => (
             <div

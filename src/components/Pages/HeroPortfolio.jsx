@@ -8,9 +8,21 @@ import {
 import "./HeroPortfolio.css";
 
 const socialLinks = [
-  { icon: <FaGithub />, name: "GitHub" },
-  { icon: <FaLinkedin />, name: "LinkedIn" },
-  { icon: <FaTwitter />, name: "Twitter" },
+  {
+    icon: <FaGithub />,
+    name: "GitHub",
+    link: "https://github.com/mr-ritesh-giri",
+  },
+  {
+    icon: <FaLinkedin />,
+    name: "LinkedIn",
+    link: "https://www.linkedin.com/in/ritesh-giri-b8b770242/",
+  },
+  {
+    icon: <FaTwitter />,
+    name: "Twitter",
+    link: "https://x.com/mr_riteshgiri",
+  },
 ];
 
 function HeroPortfolio() {
@@ -37,12 +49,15 @@ function HeroPortfolio() {
 
         {/* Social Media Icons */}
         {socialLinks.map((social, index) => (
-          <span
+          <a
             key={index}
+            href={social.link}
+            target="_blank"
+            rel="noopener noreferrer"
             className="flex items-center justify-center w-12 h-12 text-3xl gap-2 border border-violet-500 rounded-full p-2 text-white hover:text-gray-300 hover:scale-110 cursor-pointer transition duration-300"
           >
             {social.icon}
-          </span>
+          </a>
         ))}
       </div>
     </div>

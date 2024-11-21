@@ -5,6 +5,7 @@ import Iphone from "./components/PortfolioContent/Iphone";
 import HeroPortfolio from "./components/Pages/HeroPortfolio";
 import Projects from "./components/PortfolioContent/Projects";
 import Technologies from "./components/PortfolioContent/Technologies";
+import About from "./components/PortfolioContent/About";
 
 function App() {
   // useEffect(() => {
@@ -44,6 +45,7 @@ function App() {
         </div>
         <Projects />
         <Technologies />
+        <About />
       </div>
     </div>
   );
