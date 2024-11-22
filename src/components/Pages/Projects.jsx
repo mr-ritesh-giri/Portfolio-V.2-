@@ -28,8 +28,8 @@ const Projects = () => {
     const y = e.clientY - bounds.top;
 
     gsap.to(imageRefs.current[index], {
-      x: x - 0,
-      y: y - 260,
+      x: x - 100,
+      y: y - 150,
       duration: 1.8,
       ease: "power3.out",
     });
@@ -65,7 +65,7 @@ const Projects = () => {
           {hoverIndex === index && (
             <div
               ref={(el) => (imageRefs.current[index] = el)}
-              className="absolute pointer-events-none"
+              className="absolute top-0 left-52 pointer-events-none"
               style={{
                 width: "18rem",
                 height: "11rem",
