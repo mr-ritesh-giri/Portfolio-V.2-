@@ -1,6 +1,4 @@
+html,
 body {
   font-family: "Oxanium", sans-serif;
-}
-body::-webkit-scrollbar {
-  display: none;
 }
