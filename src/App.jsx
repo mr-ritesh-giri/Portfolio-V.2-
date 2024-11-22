@@ -1,7 +1,5 @@
 import "./App.css";
 import Lenis from "lenis";
-// import gsap from "gsap";
-// import { ScrollTrigger } from "gsap/all";
 import React, { useEffect, useRef } from "react";
 import Spline from "@splinetool/react-spline";
 import Iphone from "./components/Pages/Iphone";
@@ -27,24 +25,24 @@ function App() {
 
     // Prevent F12 and right-click
 
-    const handleKeyPress = (e) => {
-      if (e.key === "F12") {
-        e.preventDefault();
-      }
-    };
+    // const handleKeyPress = (e) => {
+    //   if (e.key === "F12") {
+    //     e.preventDefault();
+    //   }
+    // };
 
-    const handleRightClick = (e) => {
-      e.preventDefault();
-    };
+    // const handleRightClick = (e) => {
+    //   e.preventDefault();
+    // };
 
-    window.addEventListener("keydown", handleKeyPress);
+    // window.addEventListener("keydown", handleKeyPress);
 
-    window.addEventListener("contextmenu", handleRightClick);
+    // window.addEventListener("contextmenu", handleRightClick);
 
-    return () => {
-      window.removeEventListener("keydown", handleKeyPress);
-      window.removeEventListener("contextmenu", handleRightClick);
-    };
+    // return () => {
+    //   window.removeEventListener("keydown", handleKeyPress);
+    //   window.removeEventListener("contextmenu", handleRightClick);
+    // };
   }, []);
 
   return (
