@@ -46,7 +46,10 @@ function App() {
   }, []);
 
   return (
-    <div className="relative flex h-screen bg-black" ref={containerRef}>
+    <div
+      className="select-none relative flex h-screen bg-black"
+      ref={containerRef}
+    >
       {/* Left side: iPhone */}
       <div className="w-1/3 bg-black flex justify-center items-center fixed top-0 left-0">
         <Iphone />

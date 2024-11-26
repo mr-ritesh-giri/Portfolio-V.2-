@@ -6,6 +6,7 @@ import {
   FaRegCommentDots,
 } from "react-icons/fa";
 import "./HeroPortfolio.css";
+import Button from "../Re-Usable/Button";
 
 const socialLinks = [
   {
@@ -42,6 +43,7 @@ function HeroPortfolio() {
       </p>
 
       <div className="flex mt-8 space-x-4">
+        
         {/* Contact Button */}
         <button className="px-4 py-2 border-2 text-lg border-violet-500 text-white font-semibold hover:bg-violet-500 hover:text-white rounded-[30px] flex items-center gap-2 transition duration-300 ease-in-out">
           Let’s Connect <FaRegCommentDots className="ml-2" />
@@ -54,9 +56,13 @@ function HeroPortfolio() {
             href={social.link}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-center w-12 h-12 text-3xl gap-2 border border-violet-500 rounded-full p-2 text-white hover:text-gray-300 hover:scale-110 cursor-pointer transition duration-300"
           >
-            {social.icon}
+            <Button
+              className={
+                "border-violet-500 rounded-full hover:scale-110 transition ease-in-out"
+              }
+              children={social.icon}
+            />
           </a>
         ))}
       </div>
