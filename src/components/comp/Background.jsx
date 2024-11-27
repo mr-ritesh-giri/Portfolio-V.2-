@@ -1,4 +1,8 @@
 import React, { useState } from "react";
+import AboutMe from "./AboutMe";
+import Skills from "./Skills";
+import TicTacToe from "../AppGame/TicTacToe";
+import SnakeGame from "../AppGame/SnakeGame";
 
 const apps = [
   { id: 1, title: "About", imgSrc: "public/App/freelancer.png" },
@@ -41,12 +45,12 @@ const appUIs = {
 };
 
 const Background = () => {
-  const [activeApp, setActiveApp] = useState(null);
+  const [activeApp, setActiveApp] = useState(false);
 
   return (
     <div className="absolute inset-0 z-10">
       {/* Apps Grid */}
-      <div className="relative p-6">
+      <div className="p-4">
         <div className="grid grid-cols-4 gap-5 mt-8">
           {apps.map((app) => (
             <div
@@ -74,22 +78,28 @@ const Background = () => {
 
         {/* Render Active App */}
         {activeApp && (
-          <div className="absolute inset-0 h-screen w-full bg-black flex items-center justify-center z-20">
-            <div className="absolute top-0 flex justify-between items-center w-full p-4">
-              {/* App Content */}
-              <div className="text-white font-medium text-lg">
-                {appUIs[activeApp]}
+          <div className="absolute inset-0 z-20 h-full w-full">
+            {/* App Window */}
+            <div className="flex justify-between w-full px-5 py-2 bg-black text-white">
+              {/* Header of the apps */}
+              <div className="font-medium text-xl">
+                {apps.find((app) => app.id === activeApp)?.title}
               </div>
-              {/* Close Button */}
-              <button
-                className="text-red-500 font-bold text-xl p-2"
-                onClick={() => setActiveApp(null)}
+              <div
+                className="text-2xl text-red-500 font-semibold"
+                onClick={() => setActiveApp(false)}
               >
                 ✕
-              </button>
+              </div>
             </div>
-            {/* App Content */}
-            {/* <div className="text-black">{appUIs[activeApp]}</div> */}
+
+            {/* Apps Content Here */}
+            <div>
+              {/* <AboutMe /> */}
+              {/* <Skills /> */}
+              {/* <TicTacToe /> */}
+              <SnakeGame />
+            </div>
           </div>
         )}
       </div>
