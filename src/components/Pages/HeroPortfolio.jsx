@@ -6,7 +6,7 @@ import {
   FaRegCommentDots,
 } from "react-icons/fa";
 import "./HeroPortfolio.css";
-import Button from "../Re-Usable/Button";
+import Button from "../comp/Button";
 
 const socialLinks = [
   {
