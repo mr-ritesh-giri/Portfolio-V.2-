@@ -21,7 +21,7 @@ function Iphone() {
         </div>
 
         {/* Screen (empty white background) */}
-        <div className="relative overflow-hidden w-full h-full rounded-[2rem] ">
+        <div className="relative overflow-hidden w-full h-full rounded-[2rem]">
           {/* Empty screen */}
           <div className="w-[1240px]">
             <MeteorWall className="absolute inset-0 z-0" />

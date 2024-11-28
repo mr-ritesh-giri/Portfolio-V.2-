@@ -2,10 +2,12 @@ import React, { useState } from "react";
 import AboutMe from "./AboutMe";
 import Skills from "./Skills";
 import TicTacToe from "../AppGame/TicTacToe";
-import SnakeGame from "../AppGame/SnakeGame";
 import Tools from "./Tools";
 import PasswordGenerator from "./PasswordGenerator";
 import Twitter from "./Twitter";
+import GitHub from "./Github";
+import LinkedIn from "./LinkedIn";
+import SnakeGame from "../AppGame/SnakeGame";
 
 const apps = [
   { id: 1, title: "About", imgSrc: "public/App/freelancer.png" },
@@ -22,26 +24,42 @@ const apps = [
   },
   { id: 5, title: "Tools", imgSrc: "public/App/tools-and-utensils.png" },
   { id: 6, title: "GitHub", imgSrc: "public/App/512x512-logo-27148.png" },
-  { id: 7, title: "X", imgSrc: "public/App/twitter-x-logo-42554.png" },
+  { id: 7, title: "Twitter", imgSrc: "public/App/twitter-x-logo-42554.png" },
   { id: 8, title: "LinkedIn", imgSrc: "public/App/linkedin-logo-png-1854.png" },
+  {
+    id: 9,
+    title: "Snake Game",
+    imgSrc: "public/App/linkedin-logo-png-1854.png",
+  },
 ];
 
-const appUIs = {
-  1: <div>About App</div>,
-  2: <div>Skills App</div>,
-  3: <div>Mobile App</div>,
-  4: <div>Tik Tak Toe App</div>,
-  5: <div>Tools App</div>,
-  6: <div>GitHub App</div>,
-  7: <div>X App</div>,
-  8: <div>LinkedIn App</div>,
-  9: <div>WhatsApp App</div>,
-  10: <div>Password Generator App</div>,
-  11: <div>YouTube App</div>,
-};
-
 const Background = () => {
-  const [activeApp, setActiveApp] = useState(false);
+  const [activeApp, setActiveApp] = useState(null);
+
+  const renderActiveApp = () => {
+    switch (activeApp) {
+      case 1:
+        return <AboutMe />;
+      case 2:
+        return <Skills />;
+      case 3:
+        return <PasswordGenerator />;
+      case 4:
+        return <TicTacToe />;
+      case 5:
+        return <Tools />;
+      case 6:
+        return <GitHub />;
+      case 7:
+        return <Twitter />;
+      case 8:
+        return <LinkedIn />;
+      case 9:
+        return <SnakeGame />;
+      default:
+        return null;
+    }
+  };
 
   return (
     <div className="absolute inset-0 z-10">
@@ -83,22 +101,14 @@ const Background = () => {
               </div>
               <div
                 className="text-2xl text-red-500 font-semibold"
-                onClick={() => setActiveApp(false)}
+                onClick={() => setActiveApp(null)} // Close the app
               >
                 ✕
               </div>
             </div>
 
             {/* Apps Content Here */}
-            <div>
-              {/* <AboutMe /> */}
-              {/* <Skills /> */}
-              {/* <TicTacToe /> */}
-              {/* <SnakeGame /> */}
-              {/* <Tools /> */}
-              {/* <PasswordGenerator /> */}
-              {/* <Twitter /> */}
-            </div>
+            <div>{renderActiveApp()} </div>
           </div>
         )}
       </div>

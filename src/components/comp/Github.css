@@ -1,0 +1,23 @@
+.iphone-content::-webkit-scrollbar {
+  width: 10px;
+  height: 8px;
+}
+
+.iphone-content::-webkit-scrollbar-track {
+  background: #2d2d2d;
+  border-radius: 10px;
+}
+
+.iphone-content::-webkit-scrollbar-thumb {
+  background: #4d4d4d;
+  border-radius: 10px;
+  transition: background 0.3s ease;
+}
+
+.iphone-content::-webkit-scrollbar-thumb:hover {
+  background: #a1a1a1;
+}
+
+.iphone-content::-webkit-scrollbar-corner {
+  background: #2d2d2d;
+}
