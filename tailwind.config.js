@@ -19,6 +19,9 @@ export default {
           },
         },
       },
+      screens: {
+        x: "430px",
+      },
     },
   },
   plugins: [],

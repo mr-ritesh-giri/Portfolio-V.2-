@@ -7,7 +7,6 @@ import PasswordGenerator from "./PasswordGenerator";
 import Twitter from "./Twitter";
 import GitHub from "./Github";
 import LinkedIn from "./LinkedIn";
-import SnakeGame from "../AppGame/SnakeGame";
 
 const apps = [
   { id: 1, title: "About", imgSrc: "public/App/freelancer.png" },
@@ -26,11 +25,6 @@ const apps = [
   { id: 6, title: "GitHub", imgSrc: "public/App/512x512-logo-27148.png" },
   { id: 7, title: "Twitter", imgSrc: "public/App/twitter-x-logo-42554.png" },
   { id: 8, title: "LinkedIn", imgSrc: "public/App/linkedin-logo-png-1854.png" },
-  {
-    id: 9,
-    title: "Snake Game",
-    imgSrc: "public/App/linkedin-logo-png-1854.png",
-  },
 ];
 
 const Background = () => {
@@ -54,8 +48,6 @@ const Background = () => {
         return <Twitter />;
       case 8:
         return <LinkedIn />;
-      case 9:
-        return <SnakeGame />;
       default:
         return null;
     }

@@ -36,27 +36,27 @@ const Projects = () => {
   }, []);
 
   return (
-    <div className="h-screen w-full p-8">
-      <h1 className="text-7xl mb-20">
+    <div className="h-full p-4 sm:p-8 w-[1400px]">
+      <h1 className="text-4xl md:text-5xl lg:text-7xl mb-8 sm:mb-12 md:mb-20">
         My <span className="text-violet-500 font-semibold">Projects</span>
       </h1>
 
       {projects.map((project, index) => (
         <div className="relative mb-16" key={project.id}>
           <div
-            className="flex flex-col sm:flex-row border-b-1 border-gray-500 p-8 rounded-lg shadow-lg mb-8"
+            className="flex flex-row border-b-1 border-gray-500 sm:p-8 p-2 rounded-lg shadow-lg mb-8"
             onMouseEnter={() => setHoverIndex(index)}
             onMouseLeave={() => setHoverIndex(null)}
             onMouseMove={(e) => handleMouseMove(e, index)}
           >
-            <div className="text-2xl text-gray-600 font-medium sm:mr-4 mb-4 sm:mb-0">
+            <div className="text-sm sm:text-sm md:text-base lg:text-2xl text-gray-600 font-medium sm:mr-4 mb-4">
               {String(project.id).padStart(2, "0")}
             </div>
-            <div className="flex flex-col sm:flex-row justify-between items-center w-full">
-              <div className="text-6xl font-semibold mb-2 sm:mb-0">
+            <div className="flex justify-start sm:justify-between items-center w-full flex-col sm:flex-row">
+              <div className="text-xl sm:text-3xl md:text-4xl lg:text-6xl font-semibold mb-2 sm:mb-0">
                 {project.title}
               </div>
-              <div className="text-base text-gray-600 sm:ml-4">
+              <div className="sm:text-xs md:text-sm lg:text-base sm:ml-4 text-gray-600 text-center">
                 {project.description}
               </div>
             </div>
@@ -65,7 +65,7 @@ const Projects = () => {
           {hoverIndex === index && (
             <div
               ref={(el) => (imageRefs.current[index] = el)}
-              className="absolute top-0 left-52 pointer-events-none"
+              className="absolute top-0 left-52 pointer-events-none sm:block hidden"
               style={{
                 width: "18rem",
                 height: "11rem",

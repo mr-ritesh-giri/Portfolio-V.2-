@@ -4,8 +4,8 @@ import Background from "../comp/Background";
 
 function Iphone() {
   return (
-    <div className="flex justify-center items-center h-screen">
-      <div className="relative mx-auto border-black bg-black border-[14px] rounded-[2.5rem] h-[80vh] w-1/3 shadow-[0px_0px_20px_5px_rgba(135,206,250,0.7)]">
+    <div className="flex justify-center items-center h-screen w-full px-24">
+      <div className="relative border-black bg-black border-[14px] rounded-[2.5rem] h-[80vh] w-full shadow-[0px_0px_20px_5px_rgba(135,206,250,0.7)]">
         {/* Side buttons */}
         <div className="h-[32px] w-[3px] bg-black absolute -left-[17px] top-[72px] rounded-l-lg"></div>
         <div className="h-[46px] w-[3px] bg-black absolute -left-[17px] top-[124px] rounded-l-lg"></div>
