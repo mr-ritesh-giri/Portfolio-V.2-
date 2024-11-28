@@ -3,11 +3,18 @@ import AboutMe from "./AboutMe";
 import Skills from "./Skills";
 import TicTacToe from "../AppGame/TicTacToe";
 import SnakeGame from "../AppGame/SnakeGame";
+import Tools from "./Tools";
+import PasswordGenerator from "./PasswordGenerator";
+import Twitter from "./Twitter";
 
 const apps = [
   { id: 1, title: "About", imgSrc: "public/App/freelancer.png" },
   { id: 2, title: "Skills", imgSrc: "public/App/skill.png" },
-  { id: 3, title: "Mobile", imgSrc: "public/App/mobile-app.webp" },
+  {
+    id: 3,
+    title: "Password Generator",
+    imgSrc: "public/App/password-svgrepo-com.svg",
+  },
   {
     id: 4,
     title: "Tik Tak Toe",
@@ -17,17 +24,6 @@ const apps = [
   { id: 6, title: "GitHub", imgSrc: "public/App/512x512-logo-27148.png" },
   { id: 7, title: "X", imgSrc: "public/App/twitter-x-logo-42554.png" },
   { id: 8, title: "LinkedIn", imgSrc: "public/App/linkedin-logo-png-1854.png" },
-  { id: 9, title: "WhatsApp", imgSrc: "public/App/whatsapp-logo-png-2260.png" },
-  {
-    id: 10,
-    title: "Password Generator",
-    imgSrc: "public/App/password-svgrepo-com.svg",
-  },
-  {
-    id: 11,
-    title: "Youtube",
-    imgSrc: "public/App/youtube-color-svgrepo-com.svg",
-  },
 ];
 
 const appUIs = {
@@ -98,7 +94,10 @@ const Background = () => {
               {/* <AboutMe /> */}
               {/* <Skills /> */}
               {/* <TicTacToe /> */}
-              <SnakeGame />
+              {/* <SnakeGame /> */}
+              {/* <Tools /> */}
+              {/* <PasswordGenerator /> */}
+              {/* <Twitter /> */}
             </div>
           </div>
         )}
