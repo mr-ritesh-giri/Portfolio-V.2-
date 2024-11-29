@@ -1,11 +1,13 @@
 import "./App.css";
 import React, { useState, useEffect } from "react";
 import Lenis from "lenis";
-import About from "./components/Pages/About";
-import Iphone from "./components/Pages/Iphone";
-import Projects from "./components/Pages/Projects";
-import Technologies from "./components/Pages/Technologies";
-import HeroPortfolio from "./components/Pages/HeroPortfolio";
+import {
+  About,
+  HeroPortfolio,
+  Iphone,
+  Projects,
+  Technologies,
+} from "./components/Pages/index";
 
 function App() {
   const [viewState, setViewState] = useState({
@@ -14,7 +16,6 @@ function App() {
   });
 
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-  console.log(windowWidth);
 
   const toggleView = () => {
     setViewState((prevState) => ({
