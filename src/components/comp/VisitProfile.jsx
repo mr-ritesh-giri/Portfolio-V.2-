@@ -3,7 +3,7 @@ import React from "react";
 const VisitProfile = ({ className }) => {
   return (
     <div
-      className={`relative px-6 py-3 bg-gray-800 text-white rounded-xl text-xl ${className}`}
+      className={`relative px-6 py-3 bg-gray-950 text-white rounded-xl text-xl ${className}`}
     >
       Explore Profile
       <div className="absolute inset-x-0 bottom-0 w-full h-1 bg-gradient-to-r from-transparent via-violet-600 to-transparent" />

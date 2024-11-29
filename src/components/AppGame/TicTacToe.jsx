@@ -95,7 +95,7 @@ const TicTacToe = () => {
         {board.map((value, index) => (
           <div
             key={index}
-            className="w-16 h-16 bg-white text-black flex items-center justify-center text-2xl font-bold cursor-pointer"
+            className="w-28 h-28 bg-white text-black flex items-center justify-center text-5xl font-bold cursor-pointer"
             onClick={() => handlePlayerMove(index)}
           >
             {value}
