@@ -7,7 +7,7 @@ import {
 } from "react-icons/fa";
 import "./HeroPortfolio.css";
 import Spline from "@splinetool/react-spline";
-import Button from "../comp/Button";
+import Button from "../Layout/Button";
 
 const socialLinks = [
   {

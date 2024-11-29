@@ -5,8 +5,8 @@ import {
   FaCalendarAlt,
   FaLink,
 } from "react-icons/fa";
-import VisitProfile from "./VisitProfile";
-import ScrollLayout from "./ScrollLayout";
+import VisitProfile from "../Layout/VisitProfile";
+import ScrollLayout from "../Layout/ScrollLayout";
 
 const Twitter = () => {
   const user = {

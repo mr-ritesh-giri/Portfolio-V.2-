@@ -1,7 +1,7 @@
 import React from "react";
 import "./Github.css";
-import VisitProfile from "./VisitProfile";
-import ScrollLayout from "./ScrollLayout";
+import VisitProfile from "../Layout/VisitProfile";
+import ScrollLayout from "../Layout/ScrollLayout";
 
 const socials = [
   {
@@ -162,7 +162,7 @@ const Github = () => {
       <br />
       <br />
       <img
-        src="https://github-readme-stats.vercel.app/api/top-langs/?username=mr-ritesh-giri&theme=dark&hide_border=false&include_all_commits=false&count_private=false&layout=compact"
+        src="https://github-readme-stats.vercel.app/api/top-langs/?username=mr-ritesh-giri&theme=dark&hide_border=false&include_all_commits=false&count_private=false&layout=Layoutact"
         alt="Top Languages"
       />
       <br />
