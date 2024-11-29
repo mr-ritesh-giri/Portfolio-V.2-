@@ -57,7 +57,7 @@ const Background = () => {
     <div className="absolute inset-0 z-10">
       {/* Apps Grid */}
       <div className="p-4">
-        <div className="grid grid-cols-4 gap-5 mt-8">
+        <div className="grid grid-cols-3 sm:grid-cols-4 gap-5 mt-8">
           {apps.map((app) => (
             <div
               key={app.id}
@@ -88,7 +88,7 @@ const Background = () => {
             {/* App Window */}
             <div className="flex justify-between w-full px-5 py-2 bg-black text-white">
               {/* Header of the apps */}
-              <div className="font-medium text-xl">
+              <div className="font-bold text-xl">
                 {apps.find((app) => app.id === activeApp)?.title}
               </div>
               <div

@@ -1,6 +1,7 @@
 import React from "react";
 import "./Github.css";
 import VisitProfile from "./VisitProfile";
+import ScrollLayout from "./ScrollLayout";
 
 const socials = [
   {
@@ -82,7 +83,7 @@ const tools = [
 
 const Github = () => {
   return (
-    <div className="relative iphone-content profile-container text-white bg-black overflow-y-auto h-[74vh]">
+    <ScrollLayout className={"text-white bg-black h-[70vh]"}>
       {/* Link Button */}
       <div className="m-4 flex justify-center hover:scale-105">
         <a href={socials.linkedIn} target="_blank">
@@ -171,7 +172,7 @@ const Github = () => {
         src="https://github-contributor-stats.vercel.app/api?username=mr-ritesh-giri&limit=5&theme=tokyonight&combine_all_yearly_contributions=true"
         alt="Top Contributed Repo"
       />
-    </div>
+    </ScrollLayout>
   );
 };
 
