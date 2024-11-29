@@ -5,6 +5,7 @@ import {
   FaCalendarAlt,
   FaLink,
 } from "react-icons/fa";
+import VisitProfile from "./VisitProfile";
 
 const Twitter = () => {
   const user = {
@@ -14,7 +15,7 @@ const Twitter = () => {
     profileImage: "public/Twitter/profileimage.jpg",
     dob: "April 21, 2005",
     joinDate: "January 2023",
-    portfolio: "https://x.com/mr_riteshgiri",
+    twitterLink: "https://x.com/mr_riteshgiri",
   };
 
   return (
@@ -80,14 +81,9 @@ const Twitter = () => {
         </div>
 
         {/* Link Button */}
-        <div className="mt-6 flex justify-center">
-          <a
-            href={user.portfolio}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-8 py-3 text-white rounded-full bg-gradient-to-r from-blue-500 to-purple-500 hover:from-pink-500 hover:to-yellow-500 transform transition-all duration-500 hover:scale-110 hover:rotate-6 shadow-xl shadow-blue-500/50 hover:shadow-purple-500/50 font-bold"
-          >
-            Visit My Real Profile
+        <div className="mt-10 flex justify-center hover:scale-105">
+          <a href={user.twitterLink} target="_blank">
+            <VisitProfile />
           </a>
         </div>
       </div>

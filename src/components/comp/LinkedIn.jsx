@@ -5,6 +5,7 @@ import {
   FaCalendarAlt,
   FaLink,
 } from "react-icons/fa";
+import VisitProfile from "./VisitProfile";
 
 const LinkedIn = () => {
   const user = {
@@ -14,7 +15,7 @@ const LinkedIn = () => {
     dob: "April 21, 2005",
     joinDate: "January 2023",
     birth: "Shamli, Uttar Pradesh, India",
-    profile: "https://www.linkedin.com/in/ritesh-giri-b8b770242/",
+    linkedIn: "https://www.linkedin.com/in/ritesh-giri-b8b770242/",
     portfolio: "https://riteshcodes.netlify.app",
     followers: 12,
     connections: 7,
@@ -68,14 +69,9 @@ const LinkedIn = () => {
         </div>
 
         {/* Link Button */}
-        <div className="mt-6 flex justify-center">
-          <a
-            href={user.profile}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-8 py-3 text-white rounded-full bg-gradient-to-r from-blue-500 to-purple-500 hover:from-pink-500 hover:to-yellow-500 transform transition-all duration-500 hover:scale-110 hover:rotate-6 shadow-xl shadow-blue-500/50 hover:shadow-purple-500/50 font-bold"
-          >
-            Visit My Real Profile
+        <div className="mt-10 flex justify-center hover:scale-105">
+          <a href={user.linkedIn} target="_blank">
+            <VisitProfile />
           </a>
         </div>
       </div>
