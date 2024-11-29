@@ -13,7 +13,7 @@ const Technologies = () => {
   }, []);
 
   return (
-    <div className="container min-h-screen w-full p-3 sm:p-6 flex flex-col justify-start bg-black">
+    <div className="container min-h-screen max-w-[1400px] mx-auto p-3 sm:p-6 flex flex-col justify-start bg-black">
       {/* Heading Section */}
       <div className="mb-6 sm:mb-16">
         <h1 className="text-4xl sm:text-5xl xl:text-7xl mb-6 sm:mb-14 text-left text-white leading-tight">

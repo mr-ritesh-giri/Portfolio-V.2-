@@ -1,5 +1,4 @@
-import "./App.css";
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import Lenis from "lenis";
 import {
   About,
@@ -8,34 +7,12 @@ import {
   Projects,
   Technologies,
 } from "./components/Pages/index";
+import { useAppContext } from "./context/AppContext";
 
 function App() {
-  const [viewState, setViewState] = useState({
-    showPhone: true,
-    showPortfolio: false,
-  });
+  const { viewState, windowWidth, toggleView } = useAppContext();
 
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-
-  const toggleView = () => {
-    setViewState((prevState) => ({
-      showPhone: !prevState.showPhone,
-      showPortfolio: !prevState.showPortfolio,
-    }));
-  };
-  // Handling Width of the portfolio
-
-  useEffect(() => {
-    const handleWidth = () => {
-      setWindowWidth(window.innerWidth);
-    };
-
-    window.addEventListener("resize", handleWidth);
-    return () => {
-      window.removeEventListener("resize", handleWidth);
-    };
-  }, []);
-
+  // Handling smooth scroll (using Lenis)
   useEffect(() => {
     const lenis = new Lenis();
 
@@ -48,29 +25,23 @@ function App() {
 
     requestAnimationFrame(raf);
 
-    const handleResize = () => {
-      setWindowWidth(window.innerWidth); // Update window width on resize
-    };
-
-    window.addEventListener("resize", handleResize);
-
     return () => {
-      window.removeEventListener("resize", handleResize);
+      lenis.destroy();
     };
   }, [viewState]);
 
   return (
     <div className="select-none relative flex flex-col h-screen bg-black">
       <div className="relative w-full h-screen flex justify-center items-center">
-        {/* Mobile Phone */}
-        {windowWidth < 1760 && (
+        {/* Show mobile view (Iphone) for screen width < 1760px */}
+        {windowWidth < 1760 && !viewState.showPhone && (
           <div className="min-w-[320px] sm:max-w-[640px] w-full mx-auto">
             <Iphone />
           </div>
         )}
 
-        {/* Hero Portfolio */}
-        {windowWidth >= 1760 ? (
+        {/* Show Hero Portfolio when screen width >= 1760px */}
+        {windowWidth >= 1760 && (
           <>
             <div className="w-1/3 mx-auto">
               <Iphone />
@@ -79,9 +50,9 @@ function App() {
               <HeroPortfolio />
             </section>
           </>
-        ) : null}
+        )}
 
-        {/* Button to Toggle View */}
+        {/* Button to toggle between mobile and desktop views */}
         {windowWidth <= 1760 && (
           <button
             className="absolute z-10 bottom-4 right-4 text-white bg-gray-900 rounded-3xl p-4"
@@ -92,8 +63,8 @@ function App() {
         )}
       </div>
 
-      {/* Right side: Main portfolio content */}
-      {viewState.showPortfolio && (
+      {/* Main portfolio content */}
+      {viewState.showPortfolio && windowWidth >= 1760 && (
         <div className="flex flex-col w-full">
           <section className="h-screen w-full flex items-center justify-center mx-auto bg-white">
             <Projects />
