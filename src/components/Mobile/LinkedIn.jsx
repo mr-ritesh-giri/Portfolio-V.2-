@@ -5,7 +5,7 @@ import {
   FaCalendarAlt,
   FaLink,
 } from "react-icons/fa";
-import VisitProfile from "./VisitProfile";
+import VisitProfile from "../Layout/VisitProfile";
 
 const LinkedIn = () => {
   const user = {

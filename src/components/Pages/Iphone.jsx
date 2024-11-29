@@ -1,6 +1,6 @@
 import React from "react";
 import { MeteorWall } from "../AnimatedUi/MeteorWall";
-import Background from "../comp/Background";
+import Background from "../Layout/Background";
 
 function Iphone() {
   return (

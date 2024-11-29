@@ -1,12 +1,14 @@
 import React, { useState } from "react";
-import AboutMe from "./AboutMe";
-import Skills from "./Skills";
-import TicTacToe from "../AppGame/TicTacToe";
-import Tools from "./Tools";
-import PasswordGenerator from "./PasswordGenerator";
-import Twitter from "./Twitter";
-import GitHub from "./Github";
-import LinkedIn from "./LinkedIn";
+import {
+  AboutMe,
+  Skills,
+  TicTacToe,
+  Tools,
+  Twitter,
+  LinkedIn,
+  PasswordGenerator,
+  GitHub,
+} from "../Mobile/index";
 
 const apps = [
   { id: 1, title: "About", imgSrc: "public/App/freelancer.png" },

@@ -1,4 +1,4 @@
-import ScrollLayout from "./ScrollLayout";
+import ScrollLayout from "../Layout/ScrollLayout";
 
 const tools = [
   {
@@ -23,7 +23,7 @@ const tools = [
     img: "/Tools/react.svg",
     title: "React Dev Tools",
     description:
-      "A debugging tool for React developers to inspect component hierarchies and manage state effectively.",
+      "A debugging tool for React developers to inspect Layoutonent hierarchies and manage state effectively.",
   },
 ];
 
