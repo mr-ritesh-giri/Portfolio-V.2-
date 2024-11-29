@@ -59,22 +59,22 @@ const PasswordGenerator = () => {
 
   return (
     <div className="text-white bg-black h-full w-full">
-      <div className="px-4 py-10 rounded-lg shadow-xl w-full max-w-md">
-        <h1 className="text-3xl font-extrabold text-center mb-6">
+      <div className="px-1 sm:px-4 py-10 rounded-lg shadow-xl w-full max-w-md">
+        <h1 className="text-2xl sm:text-3xl font-extrabold text-center mb-6">
           Password Generator
         </h1>
 
-        <div className="bg-gray-800 p-6 rounded-xl shadow-2xl">
+        <div className="bg-gray-800 p-4 sm:p-6 rounded-xl shadow-2xl">
           <div className="flex flex-col gap-4 mb-6">
             <input
               type="text"
               value={password}
               readOnly
-              className="bg-gray-700 text-white py-3 px-6 rounded-lg text-lg font-semibold focus:outline-none w-full"
+              className="bg-gray-700 text-white py-1 sm:py-3 px-6 rounded-lg text-lg font-semibold focus:outline-none w-full"
             />
             <button
               onClick={copyToClipboard}
-              className="bg-gradient-to-r from-teal-400 to-teal-600 hover:from-teal-500 hover:to-teal-700 text-white py-2 px-6 rounded-lg shadow-lg transition ease-in-out"
+              className="bg-gradient-to-r from-teal-400 to-teal-600 hover:from-teal-500 hover:to-teal-700 text-white py-1 sm:py-2 px-6 rounded-lg shadow-lg transition ease-in-out"
             >
               Copy Password
             </button>
@@ -145,10 +145,10 @@ const PasswordGenerator = () => {
           </div>
 
           <div className="flex justify-between items-center">
-            <span>Password Strength: {getPasswordStrength()}</span>
+            <span className="text-sm sm:text-base">Password Strength: {getPasswordStrength()}</span>
             <button
               onClick={generatePassword}
-              className="bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 text-white py-2 px-6 rounded-lg shadow-lg transition ease-in-out"
+              className="bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 text-white py-2 px-2 sm:px-6 rounded-lg shadow-lg transition ease-in-out"
             >
               Generate
             </button>

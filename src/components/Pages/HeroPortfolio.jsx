@@ -29,7 +29,7 @@ const socialLinks = [
 
 function HeroPortfolio() {
   return (
-    <>
+    <div className="w-full mx-auto flex justify-center items-center">
       {/* Gradient Blur */}
       <div className="absolute top-0 w-full h-[220px] inset-x-0 bg-gradient-to-r from-violet-600/70 via-blue-400/70 to-violet-600/70 blur-[130px] rounded-b-full"></div>
       <div className="w-full h-screen flex flex-col justify-center items-start text-white">
@@ -71,14 +71,14 @@ function HeroPortfolio() {
         </div>
       </div>
       {/* Spline 3D Model */}
-      <div className="flex justify-center items-center h-screen w-full">
+      <div className="flex justify-center items-center h-screen w-full min-w-[600px]">
         <Spline
           scene="https://prod.spline.design/DVe8fLgj4Kw25-rZ/scene.splinecode"
           className="w-full h-full"
         />
       </div>
       <div className="absolute bottom-0 right-0 w-full h-16 bg-black z-10"></div>
-    </>
+    </div>
   );
 }
 

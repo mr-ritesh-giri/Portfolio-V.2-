@@ -47,11 +47,11 @@ const Skills = () => {
       <div className="font-bold text-2xl w-full mb-8">
         My Technology Skillset
       </div>
-      <div className="flex flex-wrap justify-center items-center gap-4">
+      <div className="flex flex-wrap justify-center items-center gap-1 sm:gap-4">
         {technologies.map((tech, index) => (
           <div
             key={index}
-            className="flex items-start bg-gray-950 px-6 py-4 rounded-2xl shadow-md border border-gray-600 hover:scale-110 mb-3 hover:border-violet-500"
+            className="flex items-start bg-gray-950 px-2 py-2 sm:px-6 sm:py-4 rounded-2xl shadow-md border border-gray-600 hover:scale-110 mb-3 hover:border-violet-500"
           >
             <img
               src={tech.img}
@@ -59,7 +59,7 @@ const Skills = () => {
               className="w-8 h-8 mr-5"
             />
             <div>
-              <h3 className="text-sm text-white">{tech.name}</h3>
+              <h3 className="text-xs sm:text-sm text-white">{tech.name}</h3>
               <p className="text-gray-400 text-sm">{tech.description}</p>
             </div>
           </div>

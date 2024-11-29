@@ -1,6 +1,6 @@
 import "./App.css";
+import React, { useState, useEffect } from "react";
 import Lenis from "lenis";
-import React, { useEffect } from "react";
 import About from "./components/Pages/About";
 import Iphone from "./components/Pages/Iphone";
 import Projects from "./components/Pages/Projects";
@@ -8,7 +8,32 @@ import Technologies from "./components/Pages/Technologies";
 import HeroPortfolio from "./components/Pages/HeroPortfolio";
 
 function App() {
-  // Lenis here and Preventing F12 and Right-click
+  const [viewState, setViewState] = useState({
+    showPhone: true,
+    showPortfolio: false,
+  });
+
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  console.log(windowWidth);
+
+  const toggleView = () => {
+    setViewState((prevState) => ({
+      showPhone: !prevState.showPhone,
+      showPortfolio: !prevState.showPortfolio,
+    }));
+  };
+  // Handling Width of the portfolio
+
+  useEffect(() => {
+    const handleWidth = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleWidth);
+    return () => {
+      window.removeEventListener("resize", handleWidth);
+    };
+  }, []);
 
   useEffect(() => {
     const lenis = new Lenis();
@@ -22,87 +47,66 @@ function App() {
 
     requestAnimationFrame(raf);
 
-    // Prevent F12 and right-click
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth); // Update window width on resize
+    };
 
-    // const handleKeyDown = (e) => {
-    //   if (
-    //     (e.ctrlKey &&
-    //       e.shiftKey &&
-    //       (e.key === "I" || e.key === "J" || e.key === "C")) ||
-    //     e.key === "F12" || // F12
-    //     (e.ctrlKey && e.key === "U") //
-    //   ) {
-    //     e.preventDefault();
-    //     alert("This action is disabled.");
-    //   }
-    // };
+    window.addEventListener("resize", handleResize);
 
-    // // Block right-click
-    // const handleContextMenu = (e) => {
-    //   e.preventDefault();
-    //   alert("Right-click is disabled.");
-    // };
-
-    // // Override `console` methods
-    // const disableConsole = () => {
-    //   const disabledConsoleMethods = [
-    //     "log",
-    //     "warn",
-    //     "error",
-    //     "info",
-    //     "debug",
-    //     "table",
-    //   ];
-    //   disabledConsoleMethods.forEach((method) => {
-    //     console[method] = () => {
-    //       alert(`Console access is disabled.`);
-    //     };
-    //   });
-    // };
-
-    // // Add event listeners
-    // window.addEventListener("keydown", handleKeyDown);
-    // window.addEventListener("contextmenu", handleContextMenu);
-
-    // // Disable console methods
-    // disableConsole();
-
-    // return () => {
-    //   // Cleanup event listeners
-    //   window.removeEventListener("keydown", handleKeyDown);
-    //   window.removeEventListener("contextmenu", handleContextMenu);
-    // };
-  }, []);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [viewState]);
 
   return (
     <div className="select-none relative flex flex-col h-screen bg-black">
-      {/* Mobile Phone */}
-      <div className="w-full h-screen flex items-center">
-        <div className="w-1/3">
-          <Iphone />
-        </div>
+      <div className="relative w-full h-screen flex justify-center items-center">
+        {/* Mobile Phone */}
+        {windowWidth < 1760 && (
+          <div className="min-w-[320px] sm:max-w-[640px] w-full mx-auto">
+            <Iphone />
+          </div>
+        )}
 
         {/* Hero Portfolio */}
-        <section className="w-2/3 flex items-center h-screen relative ml-10">
-          <HeroPortfolio />
-        </section>
+        {windowWidth >= 1760 ? (
+          <>
+            <div className="w-1/3 mx-auto">
+              <Iphone />
+            </div>
+            <section className="relative">
+              <HeroPortfolio />
+            </section>
+          </>
+        ) : null}
+
+        {/* Button to Toggle View */}
+        {windowWidth <= 1760 && (
+          <button
+            className="absolute z-10 bottom-4 right-4 text-white bg-gray-900 rounded-3xl p-4"
+            onClick={toggleView}
+          >
+            {viewState.showPhone ? "Desktop View" : "Mobile View"}
+          </button>
+        )}
       </div>
 
       {/* Right side: Main portfolio content */}
-      <div className="flex flex-col w-full">
-        <section className="h-screen w-full flex items-center justify-center mx-auto bg-white">
-          <Projects />
-        </section>
-        <section className="min-h-screen w-full flex items-center justify-center bg-black">
-          <Technologies />
-        </section>
+      {viewState.showPortfolio && (
+        <div className="flex flex-col w-full">
+          <section className="h-screen w-full flex items-center justify-center mx-auto bg-white">
+            <Projects />
+          </section>
+          <section className="min-h-screen w-full flex items-center justify-center bg-black">
+            <Technologies />
+          </section>
 
-        {/* About Section  */}
-
-        <section className="h-screen flex items-center justify-center relative overflow-hidden">
-          <About />
-        </section>
-      </div>
+          {/* About Section */}
+          <section className="h-screen flex items-center justify-center relative overflow-hidden">
+            <About />
+          </section>
+        </div>
+      )}
     </div>
   );
 }

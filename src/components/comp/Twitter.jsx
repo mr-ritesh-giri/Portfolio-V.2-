@@ -6,6 +6,7 @@ import {
   FaLink,
 } from "react-icons/fa";
 import VisitProfile from "./VisitProfile";
+import ScrollLayout from "./ScrollLayout";
 
 const Twitter = () => {
   const user = {
@@ -19,7 +20,7 @@ const Twitter = () => {
   };
 
   return (
-    <div className="bg-black text-white">
+    <ScrollLayout className="bg-black text-white h-[70vh]">
       {/* Banner Section */}
       <div
         className="relative h-40 bg-cover bg-center"
@@ -81,18 +82,13 @@ const Twitter = () => {
         </div>
 
         {/* Link Button */}
-        <div className="mt-10 flex justify-center hover:scale-105">
+        <div className="mt-4 flex justify-center hover:scale-105">
           <a href={user.twitterLink} target="_blank">
             <VisitProfile />
           </a>
         </div>
       </div>
-
-      {/* Footer */}
-      <div className="text-center py-4 text-gray-400">
-        <p>&copy; 2024 Ritesh Giri</p>
-      </div>
-    </div>
+    </ScrollLayout>
   );
 };
 

@@ -81,7 +81,7 @@ const TicTacToe = () => {
   return (
     <div className="h-full w-full bg-black flex flex-col items-center justify-center text-white pt-10">
       {/* Scoreboard */}
-      <div className="flex justify-between items-center w-64 mb-8">
+      <div className="flex justify-between items-center w-full mb-8 px-6">
         <div className="text-xl font-bold">
           Player: <span>{playerScore}</span>
         </div>
@@ -95,7 +95,7 @@ const TicTacToe = () => {
         {board.map((value, index) => (
           <div
             key={index}
-            className="w-28 h-28 bg-white text-black flex items-center justify-center text-5xl font-bold cursor-pointer"
+            className="w-16 h-16 sm:w-28 sm:h-28 bg-white text-black flex items-center justify-center text-5xl font-bold cursor-pointer"
             onClick={() => handlePlayerMove(index)}
           >
             {value}
