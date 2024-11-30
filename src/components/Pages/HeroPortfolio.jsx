@@ -29,26 +29,28 @@ const socialLinks = [
 
 function HeroPortfolio() {
   return (
-    <div className="w-full mx-auto flex justify-center items-center">
+    <div className="w-full mx-auto lg:px-6 xl:px-0 flex justify-between items-center">
       {/* Gradient Blur */}
       <div className="absolute top-0 w-full h-[220px] inset-x-0 bg-gradient-to-r from-violet-600/70 via-blue-400/70 to-violet-600/70 blur-[130px] rounded-b-full"></div>
       <div className="w-full h-screen flex flex-col justify-center items-start text-white">
-        <h2 className="text-8xl mb-10">👋I'm Ritesh</h2>
+        <h2 className="text-4xl min:text-7xl sm:text-7xl md:text-8xl lg:text-7xl xl:text-8xl mb-8 xl:mb-10">
+          👋I'm Ritesh
+        </h2>
 
-        <h1 className="text-7xl font-semibold text-transparent mb-14 bg-clip-text bg-gradient-to-r from-violet-500 via-gray-500 to-white animate-shinyText whitespace-nowrap">
+        <h1 className="text-3xl min:text-6xl sm:text-6xl md:text-7xl lg:text-6xl xl:text-7xl font-semibold text-transparent mb-10 xl:mb-14 bg-clip-text bg-gradient-to-r from-violet-500 via-gray-500 to-white animate-shinyText whitespace-nowrap">
           FrontEnd Developer
         </h1>
 
-        <p className="text-lg text-gray-300">
+        <p className="text-xs min:text-sm md:text-base xl:text-lg text-gray-300">
           Welcome to my Digital Playground
         </p>
-        <p className="text-lg text-gray-300">
+        <p className="text-xs min-470text-sm md:text-base xl:text-lg text-gray-300">
           Software Engineer by Day, UI/UX Enthusiast by Night
         </p>
 
         <div className="flex mt-8 space-x-4">
           {/* Contact Button */}
-          <button className="px-4 py-2 border-2 text-lg border-violet-500 text-white font-semibold hover:bg-violet-500 hover:text-white rounded-[30px] flex items-center gap-2 transition duration-300 ease-in-out">
+          <button className="px-2 min:px-4 py-1 min:py-2 border-2 border-violet-500 text-white text-sm md:text-lg xl:text-xl font-semibold hover:bg-violet-500 hover:text-white rounded-[30px] flex items-center gap-1 min:gap-2 transition duration-300 ease-in-out">
             Let’s Connect <FaRegCommentDots className="ml-2" />
           </button>
 
@@ -62,7 +64,7 @@ function HeroPortfolio() {
             >
               <Button
                 className={
-                  "border-violet-500 rounded-full hover:scale-110 transition ease-in-out"
+                  "min:p-1 md:p-2 text-xl min:text-2xl md:text-2xl border-violet-500 rounded-full hover:scale-110 transition ease-in-out"
                 }
                 children={social.icon}
               />
@@ -71,7 +73,7 @@ function HeroPortfolio() {
         </div>
       </div>
       {/* Spline 3D Model */}
-      <div className="flex justify-center items-center h-screen w-full min-w-[600px]">
+      <div className="hidden lg:flex justify-center items-center h-screen w-full min-w-[400px] xl:min-w-[500px] 2xl:min-w-[600px]">
         <Spline
           scene="https://prod.spline.design/DVe8fLgj4Kw25-rZ/scene.splinecode"
           className="w-full h-full"

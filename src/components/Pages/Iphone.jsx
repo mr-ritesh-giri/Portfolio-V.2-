@@ -1,10 +1,10 @@
 import React from "react";
-import { MeteorWall } from "../AnimatedUi/MeteorWall";
 import Background from "../Layout/Background";
+import { MeteorWall } from "../AnimatedUi/MeteorWall";
 
 function Iphone() {
   return (
-    <div className="flex justify-center items-center h-screen w-full px-3 sm:px-24">
+    <div className="flex justify-center items-center h-screen min-w-[320px] w-full sm:px-24 mx-auto px-4">
       <div className="relative border-black bg-black border-[14px] rounded-[2.5rem] h-[80vh] w-full shadow-[0px_0px_20px_5px_rgba(135,206,250,0.7)]">
         {/* Side buttons */}
         <div className="h-[32px] w-[3px] bg-black absolute -left-[17px] top-[72px] rounded-l-lg"></div>
@@ -23,7 +23,7 @@ function Iphone() {
         {/* Screen (empty white background) */}
         <div className="relative overflow-hidden w-full h-full rounded-[2rem]">
           {/* Empty screen */}
-          <div className="sm:min-w-[1240px]">
+          <div className="min-w-[320px]">
             <MeteorWall className="absolute inset-0 z-0" />
             <Background />
           </div>

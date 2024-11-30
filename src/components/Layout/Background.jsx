@@ -59,7 +59,7 @@ const Background = () => {
     <div className="absolute inset-0 z-10">
       {/* Apps Grid */}
       <div className="p-4">
-        <div className="grid grid-cols-3 sm:grid-cols-4 gap-5 mt-8">
+        <div className="grid grid-cols-4 gap-5 mt-8">
           {apps.map((app) => (
             <div
               key={app.id}
@@ -67,7 +67,7 @@ const Background = () => {
             >
               {/* Image (App Icon) */}
               <div
-                className="w-12 h-12 mb-2 bg-white flex justify-center items-center rounded-[12px] cursor-pointer"
+                className="w-9 h-9 min:w-12 min:h-12 mb-2 bg-white flex justify-center items-center rounded-[12px] cursor-pointer"
                 onClick={() => setActiveApp(app.id)}
               >
                 <img
@@ -77,7 +77,7 @@ const Background = () => {
                 />
               </div>
               {/* App Title */}
-              <span className="text-sm text-center text-white">
+              <span className="text-xs min:text-sm text-center text-white">
                 {app.title}
               </span>
             </div>
