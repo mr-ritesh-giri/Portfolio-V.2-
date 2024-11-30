@@ -68,7 +68,7 @@ const Background = () => {
               >
                 {/* Image (App Icon) */}
                 <div
-                  className="w-8 h-8 y:w-11 y:h-11 x:w-12 x:h-12 mb-2 bg-white flex justify-center items-center rounded-[12px] cursor-pointer"
+                  className="w-11 h-11 x:w-12 x:h-12 mb-2 bg-white flex justify-center items-center rounded-[12px] cursor-pointer"
                   onClick={() => setActiveApp(app.id)}
                 >
                   <img

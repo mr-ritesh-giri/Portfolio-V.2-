@@ -1,4 +1,5 @@
 import React from "react";
+import { FaMobileAlt, FaDesktop } from "react-icons/fa";
 import { HeroPortfolio, Iphone } from "../Pages";
 import { useAppContext } from "../../context/AppContext";
 
@@ -35,10 +36,10 @@ const PortfolioTop = () => {
       )}
 
       <button
-        className="absolute z-10 bottom-4 right-4 text-white bg-gray-900 rounded-3xl p-3 text-base min:p-4 min:text-lg"
+        className="absolute z-10 bottom-4 right-4 text-white bg-gray-900 rounded-full p-3 sm:p-4 text-2xl sm:text-3xl"
         onClick={toggleView}
       >
-        {viewState.showPhone ? "Desktop View" : "Mobile View"}
+        {viewState.showPhone ? <FaMobileAlt /> : <FaDesktop />}
       </button>
     </div>
   );
