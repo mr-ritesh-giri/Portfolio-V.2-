@@ -33,15 +33,15 @@ function HeroPortfolio() {
       {/* Gradient Blur */}
       <div className="absolute top-0 w-full h-[220px] inset-x-0 bg-gradient-to-r from-violet-600/70 via-blue-400/70 to-violet-600/70 blur-[130px] rounded-b-full"></div>
       <div className="w-full h-screen flex flex-col justify-center items-start text-white">
-        <h2 className="text-4xl x:text-6xl sm:text-7xl md:text-8xl lg:text-7xl xl:text-8xl mb-8 xl:mb-10">
+        <h2 className="text-4xl y:text-5xl x:text-6xl sm:text-7xl md:text-8xl lg:text-7xl xl:text-8xl mb-8 xl:mb-10">
           👋I'm Ritesh
         </h2>
 
-        <h1 className="text-3xl x:text-5xl sm:text-6xl md:text-7xl lg:text-6xl xl:text-7xl font-semibold text-transparent mb-10 xl:mb-14 bg-clip-text bg-gradient-to-r from-violet-500 via-gray-500 to-white animate-shinyText whitespace-nowrap">
+        <h1 className="text-3xl y:text-4xl x:text-5xl sm:text-6xl md:text-7xl lg:text-6xl xl:text-7xl font-semibold text-transparent mb-10 xl:mb-14 bg-clip-text bg-gradient-to-r from-violet-500 via-gray-500 to-white animate-shinyText whitespace-nowrap">
           FrontEnd Developer
         </h1>
 
-        <p className="text-xs x:text-sm md:text-base xl:text-lg text-gray-300">
+        <p className="y:text-xs x:text-sm md:text-base xl:text-lg text-gray-300">
           Welcome to my Digital Playground
         </p>
         <p className="text-xs x-470text-sm md:text-base xl:text-lg text-gray-300">

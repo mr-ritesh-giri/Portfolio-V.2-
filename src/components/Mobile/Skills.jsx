@@ -37,7 +37,7 @@ const technologies = [
     description: "Scroll",
   },
   {
-    img: "/Tech/Git.svg",
+    img: "/Tech/GIT.svg",
     name: "Git",
     description: "Version",
   },
