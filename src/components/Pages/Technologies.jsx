@@ -73,7 +73,7 @@ const Technologies = () => {
           ].map((tech, index) => (
             <div
               key={index}
-              className="draggable flex items-center bg-gray-950 px-2 py-3 sm:p-4 xl:p-6 rounded-2xl shadow-md border border-gray-600 hover:shadow-xl hover:border-violet-500"
+              className="sm:draggable flex items-center bg-gray-950 px-2 py-3 sm:p-4 xl:p-6 rounded-2xl shadow-md border border-gray-600 hover:shadow-xl hover:border-violet-500"
             >
               <div className="w-8 h-8 sm:w-12 sm:h-12 md:w-12 md:h-12 lg:w-16 lg:h-16 sm:mr-8 mr-4">
                 <img
