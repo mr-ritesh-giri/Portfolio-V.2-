@@ -13,7 +13,7 @@ const Twitter = () => {
     name: "Ritesh Giri",
     username: "@mr_riteshgiri",
     bio: "Passionate FrontEnd Developer 🚀 | Turning ideas into interactive experiences | Constantly learning and evolving in the world of web development | Software developer/Programmer/Software engineer",
-    profileImage: "public/Twitter/profileimage.jpg",
+    profileImage: "/Twitter/profileimage.jpg",
     dob: "April 21, 2005",
     joinDate: "January 2023",
     twitterLink: "https://x.com/mr_riteshgiri",
@@ -24,7 +24,7 @@ const Twitter = () => {
       {/* Banner Section */}
       <div
         className="relative h-40 bg-cover bg-center"
-        style={{ backgroundImage: "url(public/Twitter/twitterbanner.jpg)" }}
+        style={{ backgroundImage: "url(/Twitter/twitterbanner.jpg)" }}
       >
         <div className="absolute inset-0 bg-black opacity-40"></div>
       </div>

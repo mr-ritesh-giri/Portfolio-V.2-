@@ -7,7 +7,7 @@ const AboutMe = () => {
       <div className="w-full h-full flex flex-col items-center justify-center bg-black pt-4">
         <div className="w-40 h-40 x:w-48 x:h-48 mb-8 rounded-full border-4 border-violet-500">
           <img
-            src="public/App/freelancer.png"
+            src="/App/freelancer.png"
             alt="About Me"
             className="w-full h-full object-cover object-center p-6"
           />

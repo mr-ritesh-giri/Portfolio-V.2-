@@ -2,42 +2,42 @@ import ScrollLayout from "../Layout/ScrollLayout";
 
 const technologies = [
   {
-    img: "/public/Tech/HTML.webp",
+    img: "/Tech/HTML.webp",
     name: "HTML",
     description: "Markup",
   },
   {
-    img: "/public/Tech/CSS.svg",
+    img: "/Tech/CSS.svg",
     name: "CSS",
     description: "Styling",
   },
   {
-    img: "/public/Tech/JS.png",
+    img: "/Tech/JS.png",
     name: "JavaScript",
     description: "Programming",
   },
   {
-    img: "/public/Tech/React.svg",
+    img: "/Tech/React.svg",
     name: "React",
     description: "Framework",
   },
   {
-    img: "/public/Tech/Tailwind.svg",
+    img: "/Tech/Tailwind.svg",
     name: "TailwindCSS",
     description: "Framework",
   },
   {
-    img: "/public/Tech/GSAP.svg",
+    img: "/Tech/GSAP.svg",
     name: "GSAP",
     description: "Animation",
   },
   {
-    img: "/public/Tech/LocomotiveJs.png",
+    img: "/Tech/LocomotiveJs.png",
     name: "Locomotive JS",
     description: "Scroll",
   },
   {
-    img: "/public/Tech/Git.svg",
+    img: "/Tech/Git.svg",
     name: "Git",
     description: "Version",
   },

@@ -26,7 +26,7 @@ const LinkedIn = () => {
       {/* Banner Section */}
       <div
         className="relative h-40 bg-cover bg-center"
-        style={{ backgroundImage: "url(public/Twitter/twitterbanner.jpg)" }}
+        style={{ backgroundImage: "url(/Twitter/twitterbanner.jpg)" }}
       >
         <div className="absolute inset-0"></div>
       </div>

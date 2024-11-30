@@ -11,22 +11,22 @@ import {
 } from "../Mobile/index";
 
 const apps = [
-  { id: 1, title: "About", imgSrc: "public/App/freelancer.png" },
-  { id: 2, title: "Skills", imgSrc: "public/App/skill.png" },
+  { id: 1, title: "About", imgSrc: "/App/freelancer.png" },
+  { id: 2, title: "Skills", imgSrc: "/App/skill.png" },
   {
     id: 3,
     title: "Password Generator",
-    imgSrc: "public/App/password-svgrepo-com.svg",
+    imgSrc: "/App/password-svgrepo-com.svg",
   },
   {
     id: 4,
     title: "Tik Tak Toe",
-    imgSrc: "public/App/tic-tac-toe-svgrepo-com.svg",
+    imgSrc: "/App/tic-tac-toe-svgrepo-com.svg",
   },
-  { id: 5, title: "Tools", imgSrc: "public/App/tools-and-utensils.png" },
-  { id: 6, title: "GitHub", imgSrc: "public/App/512x512-logo-27148.png" },
-  { id: 7, title: "Twitter", imgSrc: "public/App/twitter-x-logo-42554.png" },
-  { id: 8, title: "LinkedIn", imgSrc: "public/App/linkedin-logo-png-1854.png" },
+  { id: 5, title: "Tools", imgSrc: "/App/tools-and-utensils.png" },
+  { id: 6, title: "GitHub", imgSrc: "/App/512x512-logo-27148.png" },
+  { id: 7, title: "Twitter", imgSrc: "/App/twitter-x-logo-42554.png" },
+  { id: 8, title: "LinkedIn", imgSrc: "/App/linkedin-logo-png-1854.png" },
 ];
 
 const Background = () => {
