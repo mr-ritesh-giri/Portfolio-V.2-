@@ -20,9 +20,7 @@ export default {
         },
       },
       screens: {
-        x: "430px",
-        "min-1760": "1760px",
-        min: "470px",
+        x: "470px",
       },
     },
   },

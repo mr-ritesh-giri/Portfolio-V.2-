@@ -10,7 +10,7 @@ const PortfolioTop = () => {
       {windowWidth < 1760 ? (
         <>
           {viewState.showPhone && (
-            <div className="w-full max-w-[1240px] mx-auto">
+            <div className="x:px-12 sm:w-1/3 w-full mx-auto">
               <Iphone />
             </div>
           )}
@@ -22,7 +22,7 @@ const PortfolioTop = () => {
         </>
       ) : (
         <>
-          <div className="max-w-[1240px] w-full mx-auto">
+          <div className="x:px-12 sm:w-1/3 w-full mx-auto">
             <Iphone />
           </div>
 

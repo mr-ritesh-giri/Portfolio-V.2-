@@ -58,31 +58,33 @@ const Background = () => {
   return (
     <div className="absolute inset-0 z-10">
       {/* Apps Grid */}
-      <div className="p-4">
-        <div className="grid grid-cols-4 gap-5 mt-8">
-          {apps.map((app) => (
-            <div
-              key={app.id}
-              className="flex flex-col items-center hover:scale-105"
-            >
-              {/* Image (App Icon) */}
+      <div className="x:p-4">
+        {!activeApp && (
+          <div className="grid grid-cols-4 gap-3 x:gap-5 mt-8">
+            {apps.map((app) => (
               <div
-                className="w-9 h-9 min:w-12 min:h-12 mb-2 bg-white flex justify-center items-center rounded-[12px] cursor-pointer"
-                onClick={() => setActiveApp(app.id)}
+                key={app.id}
+                className="flex flex-col items-center hover:scale-105"
               >
-                <img
-                  src={app.imgSrc}
-                  alt={app.title}
-                  className="w-full h-full object-cover rounded-lg p-1"
-                />
+                {/* Image (App Icon) */}
+                <div
+                  className="w-9 h-9 x:w-12 x:h-12 mb-2 bg-white flex justify-center items-center rounded-[12px] cursor-pointer"
+                  onClick={() => setActiveApp(app.id)}
+                >
+                  <img
+                    src={app.imgSrc}
+                    alt={app.title}
+                    className="w-full h-full object-cover rounded-lg p-1"
+                  />
+                </div>
+                {/* App Title */}
+                <span className="text-xs x:text-base text-center text-white">
+                  {app.title}
+                </span>
               </div>
-              {/* App Title */}
-              <span className="text-xs min:text-sm text-center text-white">
-                {app.title}
-              </span>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        )}
 
         {/* Render Active App */}
         {activeApp && (
