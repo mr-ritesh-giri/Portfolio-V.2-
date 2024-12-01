@@ -55,12 +55,12 @@ const Skills = () => {
           {technologies.map((tech, index) => (
             <div
               key={index}
-              className="flex justify-center items-start bg-gray-950 px-2 py-2 sm:px-6 sm:py-4 rounded-2xl shadow-md border border-gray-600 hover:scale-110 hover:border-violet-500"
+              className="flex justify-center items-start bg-gray-950 px-2 py-2 x:px-4 x:py-4 sm:px-6 sm:py-4 rounded-2xl shadow-md border border-gray-600 hover:scale-110 hover:border-violet-500"
             >
               <img
                 src={tech.img}
                 alt={`${tech.name} logo`}
-                className="w-8 h-8 mr-5"
+                className="w-9 h-9 x:w-11 x:h-11 mr-5"
               />
               <div>
                 <h3 className="text-xs sm:text-sm text-white">{tech.name}</h3>

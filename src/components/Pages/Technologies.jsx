@@ -6,14 +6,34 @@ gsap.registerPlugin(Draggable);
 
 const Technologies = () => {
   useEffect(() => {
-    Draggable.create(".draggable", {
-      bounds: ".container",
-      inertia: true,
-    });
+    let draggableInstances = [];
+
+    const updateDraggable = () => {
+      if (window.innerWidth >= 1040) {
+        if (draggableInstances.length === 0) {
+          draggableInstances = Draggable.create(".draggable", {
+            bounds: ".container",
+            inertia: true,
+          });
+        }
+      } else {
+        draggableInstances.forEach((instance) => instance.kill());
+        draggableInstances = [];
+      }
+    };
+
+    updateDraggable();
+
+    window.addEventListener("resize", updateDraggable);
+
+    return () => {
+      window.removeEventListener("resize", updateDraggable);
+      draggableInstances.forEach((instance) => instance.kill());
+    };
   }, []);
 
   return (
-    <div className="container min-h-screen max-w-[1400px] mx-auto p-3 sm:p-6 flex flex-col justify-start bg-black">
+    <div className="container min-h-screen max-w-[1400px] mx-auto px-2 py-8 sm:p-6 flex flex-col justify-start bg-black">
       {/* Heading Section */}
       <div className="mb-6 sm:mb-16">
         <h1 className="text-4xl sm:text-5xl xl:text-7xl mb-6 sm:mb-14 text-left text-white leading-tight">
@@ -27,53 +47,32 @@ const Technologies = () => {
 
       {/* Skills Section */}
       <div className="flex-1 p-2 sm:p-6 rounded-lg shadow-lg overflow-hidden">
-        {/* Placeholder for skills */}
         <div className="grid x:grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 sm:gap-6 gap-3">
           {[
-            {
-              img: "/Tech/HTML.webp",
-              name: "HTML",
-              description: "Markup",
-            },
-            {
-              img: "/Tech/CSS.svg",
-              name: "CSS",
-              description: "Styling",
-            },
+            { img: "/Tech/HTML.webp", name: "HTML", description: "Markup" },
+            { img: "/Tech/CSS.svg", name: "CSS", description: "Styling" },
             {
               img: "/Tech/JS.png",
               name: "JavaScript",
               description: "Programming",
             },
-            {
-              img: "/Tech/React.svg",
-              name: "React",
-              description: "Framework",
-            },
+            { img: "/Tech/React.svg", name: "React", description: "Framework" },
             {
               img: "/Tech/Tailwind.svg",
               name: "TailwindCSS",
               description: "Framework",
             },
-            {
-              img: "/Tech/GSAP.svg",
-              name: "GSAP",
-              description: "Animation",
-            },
+            { img: "/Tech/GSAP.svg", name: "GSAP", description: "Animation" },
             {
               img: "/Tech/LocomotiveJs.png",
               name: "Locomotive JS",
               description: "Scroll",
             },
-            {
-              img: "/Tech/Git.svg",
-              name: "Git",
-              description: "Version",
-            },
+            { img: "/Tech/GIT.svg", name: "Git", description: "Version" },
           ].map((tech, index) => (
             <div
               key={index}
-              className="sm:draggable flex items-center bg-gray-950 px-2 py-3 sm:p-4 xl:p-6 rounded-2xl shadow-md border border-gray-600 hover:shadow-xl hover:border-violet-500"
+              className="draggable flex items-center bg-gray-950 px-2 py-3 sm:p-4 xl:p-6 rounded-2xl shadow-md border border-gray-600 hover:shadow-xl hover:border-violet-500"
             >
               <div className="w-8 h-8 sm:w-12 sm:h-12 md:w-12 md:h-12 lg:w-16 lg:h-16 sm:mr-8 mr-4">
                 <img

@@ -36,7 +36,7 @@ const PortfolioTop = () => {
       )}
 
       <button
-        className="absolute z-10 bottom-4 right-4 text-white bg-gray-900 rounded-full p-3 sm:p-4 text-2xl sm:text-3xl"
+        className="absolute z-10 bottom-4 right-4 text-white bg-gradient-to-r from-violet-500 to-purple-700 rounded-full p-3 sm:p-4 text-2xl sm:text-3xl shadow-2xl transition-all duration-300 ease-in-out hover:rotate-12 hover:scale-110 animate-bounce"
         onClick={toggleView}
       >
         {viewState.showPhone ? <FaMobileAlt /> : <FaDesktop />}

@@ -36,8 +36,8 @@ const Projects = () => {
   }, []);
 
   return (
-    <div className="h-full p-4 sm:p-8 w-[1400px]">
-      <h1 className="text-4xl md:text-5xl lg:text-7xl mb-8 sm:mb-12 md:mb-20">
+    <div className="h-full py-8 px-4 sm:p-8 w-[1400px]">
+      <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl mb-6 sm:mb-14 text-left text-black leading-tight">
         My <span className="text-violet-500 font-semibold">Projects</span>
       </h1>
 
@@ -53,7 +53,7 @@ const Projects = () => {
               {String(project.id).padStart(2, "0")}
             </div>
             <div className="flex justify-start sm:justify-between items-center w-full flex-col sm:flex-row">
-              <div className="text-xl sm:text-3xl md:text-4xl lg:text-6xl font-semibold mb-2 sm:mb-0">
+              <div className="text-xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold mb-2 sm:mb-0">
                 {project.title}
               </div>
               <div className="sm:text-xs md:text-sm lg:text-base sm:ml-4 text-gray-600 text-center">
