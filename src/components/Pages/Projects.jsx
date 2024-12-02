@@ -1,6 +1,6 @@
 import React, { useState, useRef, useCallback } from "react";
 import { gsap } from "gsap";
-import Modal from "../Layout/Modal"; // Assuming Modal is imported correctly
+import { ProjectModal } from "../Layout";
 
 const projects = [
   {
@@ -23,7 +23,7 @@ const Projects = () => {
   const [hoverIndex, setHoverIndex] = useState(null);
   const imageRefs = useRef([]);
 
-  const [isModalOpen, setProjectModalVisible] = useState(true);
+  const [isModalOpen, setProjectModalVisible] = useState(false);
 
   const handleMouseMove = useCallback((e, index) => {
     const bounds = e.currentTarget.getBoundingClientRect();
@@ -90,7 +90,7 @@ const Projects = () => {
       )}
       {/* Modal with GSAP Transition */}
       {isModalOpen && (
-        <Modal
+        <ProjectModal
           isModalOpen={isModalOpen}
           setProjectModalVisible={setProjectModalVisible}
         />
