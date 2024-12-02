@@ -53,31 +53,33 @@ const ProjectModal = ({ isModalOpen, setProjectModalVisible, className }) => {
   return (
     <div
       ref={modalRef}
-      className={`${className} absolute top-0 left-0 right-0 bottom-0 transition-all duration-300 ease-in-out ${
+      className={`${className}flex justify-center items-center h-full w-full transition-all duration-300 ease-in-out ${
         isModalOpen ? "block bg-gray" : "hidden"
       } ${
         isFullScreen
-          ? "w-full h-full bg-black text-white shadow-2xl"
-          : "max-w-[1400px] h-4/5 m-auto bg-white text-black shadow-2xl"
+          ? "w-full min-h-screen px-5 bg-black text-white shadow-2xl pt-8 sm:pt-0"
+          : "max-w-[230px] y:max-w-[300px] x:max-w-[360px] sm:max-w-[520px] md:max-w-[600px] lg:max-w-[850px] xl:max-w-[1200px] 2xl:max-w-[1400px] h-2/4 sm:h-3/4  md:h-4/5 m-auto bg-white text-black shadow-2xl"
       }`}
     >
       {/* Close and Full-Screen Toggle Buttons */}
       <div
         className={`${
           isFullScreen ? "text-white" : "text-black"
-        } flex flex-col justify-center items-center text-4xl space-y-2 ${
-          !isFullScreen ? "absolute top-4 -right-10" : "absolute top-6 right-6"
+        } text-2xl  sm:text-4xl ${
+          !isFullScreen
+            ? "absolute top-4 -right-10 gap-2 flex flex-col justify-center items-center"
+            : "absolute top-6 right-6 gap-4 flex flex-row-reverse"
         }`}
       >
         <button
-          className="hover:text-red-500 transition-colors duration-300" // Close button styles
-          onClick={() => setProjectModalVisible(false)} // Close modal
+          className="hover:text-red-500 transition-colors duration-300"
+          onClick={() => setProjectModalVisible(false)}
           aria-label="Close Modal"
         >
           ✖
         </button>
         <button
-          className="hover:text-yellow-400 transition-colors duration-300" // Toggle full-screen button styles
+          className="hover:text-yellow-400 transition-colors duration-300"
           onClick={() => toggleScreen()}
           aria-label="Toggle Full Screen"
         >
@@ -90,16 +92,22 @@ const ProjectModal = ({ isModalOpen, setProjectModalVisible, className }) => {
         <div
           key={index}
           className={`max-w-[1400px] mx-auto ${
-            isFullScreen ? "bg-black text-white py-24" : "bg-white text-black p-10"
+            isFullScreen
+              ? "bg-black text-white py-8 lg:py-24"
+              : "bg-white text-black p-5 md:p-10"
           }`}
         >
           {/* Main Content Section */}
-          <div className="flex justify-between items-center h-full">
+          <div className="flex flex-col-reverse lg:flex-row justify-between items-start h-full">
             {/* Text and Project Details */}
-            <div className="max-w-[800px] w-full">
-              <h1 className="text-4xl mb-6">{project.title}</h1>
-              <p className="text-lg mb-6 text-gray-500">{project.shortDes}</p>
-              <div className="space-x-3 text-white">
+            <div className="max-w-[700px] xl:max-w-[800px] w-full">
+              <h1 className="text-xl x:text-xl sm:base md:text-3xl lg:text-2xl xl:text-4xl mb-2 xl:mb-6">
+                {project.title}
+              </h1>
+              <p className="text-sm x:text-base md:text-lg lg:text-base xl:text-lg mb-3 xl:mb-6 text-gray-500">
+                {project.shortDes}
+              </p>
+              <div className="space-x-3 mb-3 md:mb-0 text-white">
                 {/* Buttons for GitHub and Live Link */}
                 <a
                   href={project.link}
@@ -107,7 +115,7 @@ const ProjectModal = ({ isModalOpen, setProjectModalVisible, className }) => {
                   rel="noopener noreferrer"
                 >
                   <button
-                    className={`py-3 px-5 text-lg rounded-3xl  border-2 transition-all duration-300 ${
+                    className={`py-2 px-3 xl:py-3 xl:px-5 text-base x:text-xl md:text-xl xl:text-lg rounded-3xl  border-2 transition-all duration-300 ${
                       isFullScreen
                         ? "bg-black border-white hover:bg-white hover:text-black"
                         : "bg-black border-black hover:bg-white hover:text-black"
@@ -117,7 +125,7 @@ const ProjectModal = ({ isModalOpen, setProjectModalVisible, className }) => {
                   </button>
                 </a>
                 <button
-                  className={`py-3 px-5 text-lg rounded-3xl  border-2 transition-all duration-300 ${
+                  className={`py-2 px-3 xl:py-3 xl:px-5 text-base x:text-xl lg:text-lg rounded-3xl  border-2 transition-all duration-300 ${
                     isFullScreen
                       ? "bg-black border-white hover:bg-white hover:text-black"
                       : "bg-black border-black hover:bg-white hover:text-black"
@@ -128,7 +136,7 @@ const ProjectModal = ({ isModalOpen, setProjectModalVisible, className }) => {
               </div>
             </div>
             {/* Project Image */}
-            <div className="w-96">
+            <div className="mb-2 lg:mb-0 w-full lg:w-96">
               <img
                 src={project.image}
                 alt={project.title}
@@ -137,13 +145,15 @@ const ProjectModal = ({ isModalOpen, setProjectModalVisible, className }) => {
             </div>
           </div>
           {/* Divider */}
-          <hr className="my-6 border-t-2 border-gray-900" />
+          <hr className="hidden lg:block my-6 border-t-2 border-gray-900" />
           {/* Project Screenshots */}
-          <div>
-            <h1 className="text-3xl mb-4">Project Screenshots</h1>
+          <div className={`${isFullScreen ? "block" : "hidden lg:block"}`}>
+            <h1 className="text-2xl sm:text-3xl xl:text-3xl mb-4">
+              Project Screenshots
+            </h1>
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
               {project.screenshots.map((image, idx) => (
-                <div className="w-full text-center">
+                <div className="w-full text-center mb-4">
                   <img
                     key={idx}
                     src={image}

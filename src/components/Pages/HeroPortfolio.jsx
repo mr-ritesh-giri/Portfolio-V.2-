@@ -69,13 +69,13 @@ function HeroPortfolio() {
         </div>
       </div>
       {/* Spline 3D Model */}
-      <div className="hidden lg:flex justify-center items-center h-screen w-full min-w-[400px] xl:min-x-w-[500px] 2xl:min-w-[600px]">
+      <div className="hidden lg:block justify-center items-center h-screen w-full min-w-[400px] xl:min-x-w-[500px] 2xl:min-w-[600px]">
         <Spline
           scene="https://prod.spline.design/DVe8fLgj4Kw25-rZ/scene.splinecode"
           className="w-full h-full"
         />
       </div>
-      <div className="absolute bottom-0 right-0 w-full h-16 bg-black z-10"></div>
+      <div className="hidden lg:block absolute bottom-0 right-0 w-full h-16 bg-black z-10"></div>
     </div>
   );
 }

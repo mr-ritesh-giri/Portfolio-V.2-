@@ -39,9 +39,9 @@ const Projects = () => {
   }, []);
 
   return (
-    <div className="relative h-screen w-full">
+    <div className="relative min-h-screen w-full">
       {!isModalOpen && (
-        <div className="h-full mx-auto py-8 px-4 sm:p-14 w-[1400px]">
+        <div className="h-full mx-auto py-8 px-4 sm:p-14 max-w-[1400px]">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl mb-6 sm:mb-14 text-left text-black leading-tight">
             My <span className="text-violet-500 font-semibold">Projects</span>
           </h1>
