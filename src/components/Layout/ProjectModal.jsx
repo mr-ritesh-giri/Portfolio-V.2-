@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import { gsap } from "gsap";
+import CustomButton from "../Buttons/CustomButton";
 
 const projects = [
   {
@@ -27,6 +28,16 @@ const projects = [
 const ProjectModal = ({ isModalOpen, setProjectModalVisible, className }) => {
   const [isFullScreen, setFullScreen] = useState(false);
   const modalRef = useRef(null);
+  const [isLargeScreen, setIsLargeScreen] = useState(window.innerWidth >= 1024);
+
+  const handleResize = () => {
+    setIsLargeScreen(window.innerWidth >= 1024);
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const toggleScreen = () => {
     setFullScreen((prevScreen) => !prevScreen);
@@ -53,11 +64,11 @@ const ProjectModal = ({ isModalOpen, setProjectModalVisible, className }) => {
   return (
     <div
       ref={modalRef}
-      className={`${className}flex justify-center items-center h-full w-full transition-all duration-300 ease-in-out ${
+      className={`absolute top-0 right-0 bottom-0 left-0 w-full transition-all duration-300 ease-in-out ${className} ${
         isModalOpen ? "block bg-gray" : "hidden"
       } ${
         isFullScreen
-          ? "w-full min-h-screen px-5 bg-black text-white shadow-2xl pt-8 sm:pt-0"
+          ? "flex justify-center items-center w-full h-full px-5 bg-black text-white shadow-2xl pt-8 sm:pt-0"
           : "max-w-[230px] y:max-w-[300px] x:max-w-[360px] sm:max-w-[520px] md:max-w-[600px] lg:max-w-[850px] xl:max-w-[1200px] 2xl:max-w-[1400px] h-2/4 sm:h-3/4  md:h-4/5 m-auto bg-white text-black shadow-2xl"
       }`}
     >
@@ -67,7 +78,7 @@ const ProjectModal = ({ isModalOpen, setProjectModalVisible, className }) => {
           isFullScreen ? "text-white" : "text-black"
         } text-2xl  sm:text-4xl ${
           !isFullScreen
-            ? "absolute top-4 -right-10 gap-2 flex flex-col justify-center items-center"
+            ? "absolute top-2 md:top-4 -right-8 md:-right-10 gap-2 flex flex-col justify-center items-center"
             : "absolute top-6 right-6 gap-4 flex flex-row-reverse"
         }`}
       >
@@ -83,7 +94,7 @@ const ProjectModal = ({ isModalOpen, setProjectModalVisible, className }) => {
           onClick={() => toggleScreen()}
           aria-label="Toggle Full Screen"
         >
-          {isFullScreen ? "–" : "⛶"}
+          {isLargeScreen ? (isFullScreen ? "–" : "⛶") : null}
         </button>
       </div>
 
@@ -108,31 +119,16 @@ const ProjectModal = ({ isModalOpen, setProjectModalVisible, className }) => {
                 {project.shortDes}
               </p>
               <div className="space-x-3 mb-3 md:mb-0 text-white">
-                {/* Buttons for GitHub and Live Link */}
-                <a
+                <CustomButton
+                  text="Live Link"
                   href={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <button
-                    className={`py-2 px-3 xl:py-3 xl:px-5 text-base x:text-xl md:text-xl xl:text-lg rounded-3xl  border-2 transition-all duration-300 ${
-                      isFullScreen
-                        ? "bg-black border-white hover:bg-white hover:text-black"
-                        : "bg-black border-black hover:bg-white hover:text-black"
-                    }`}
-                  >
-                    Live Link
-                  </button>
-                </a>
-                <button
-                  className={`py-2 px-3 xl:py-3 xl:px-5 text-base x:text-xl lg:text-lg rounded-3xl  border-2 transition-all duration-300 ${
-                    isFullScreen
-                      ? "bg-black border-white hover:bg-white hover:text-black"
-                      : "bg-black border-black hover:bg-white hover:text-black"
-                  }`}
-                >
-                  GitHub
-                </button>
+                  isFullScreen={isFullScreen}
+                />
+                <CustomButton
+                  text="GitHub"
+                  href={null}
+                  isFullScreen={isFullScreen}
+                />
               </div>
             </div>
             {/* Project Image */}
@@ -153,9 +149,8 @@ const ProjectModal = ({ isModalOpen, setProjectModalVisible, className }) => {
             </h1>
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
               {project.screenshots.map((image, idx) => (
-                <div className="w-full text-center mb-4">
+                <div key={idx} className="w-full text-center mb-4">
                   <img
-                    key={idx}
                     src={image}
                     alt={`Screenshot ${idx + 1}`}
                     className="w-full h-full object-cover rounded-lg shadow-lg mb-2"

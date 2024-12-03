@@ -1,4 +1,4 @@
-import React, { useState, useRef, useCallback } from "react";
+import React, { useState, useRef, useCallback, useEffect } from "react";
 import { gsap } from "gsap";
 import { ProjectModal } from "../Layout";
 
@@ -15,15 +15,16 @@ const projects = [
     title: "Portfolio",
     description: "Front-End Development / Personal Portfolio",
     image: "/Project/Portfolio.png",
-    link: "https://warrantease.netlify.app/",
+    link: "https://riteshcodes.netlify.app/",
   },
 ];
 
 const Projects = () => {
   const [hoverIndex, setHoverIndex] = useState(null);
   const imageRefs = useRef([]);
-
   const [isModalOpen, setProjectModalVisible] = useState(false);
+  const [activeProject, setActiveProject] = useState(null);
+  const [isLargeScreen, setIsLargeScreen] = useState(window.innerWidth >= 1024);
 
   const handleMouseMove = useCallback((e, index) => {
     const bounds = e.currentTarget.getBoundingClientRect();
@@ -38,8 +39,27 @@ const Projects = () => {
     });
   }, []);
 
+  const handleResize = () => {
+    setIsLargeScreen(window.innerWidth >= 1024);
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const handleProjectClick = (project) => {
+    if (isLargeScreen) {
+      setHoverIndex(null);
+      setActiveProject(project);
+      setProjectModalVisible(true);
+    } else {
+      window.open(project.link, "_blank");
+    }
+  };
+
   return (
-    <div className="relative min-h-screen w-full">
+    <div className="relative min-h-screen h-auto w-full overflow-y-auto">
       {!isModalOpen && (
         <div className="h-full mx-auto py-8 px-4 sm:p-14 max-w-[1400px]">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl mb-6 sm:mb-14 text-left text-black leading-tight">
@@ -52,7 +72,7 @@ const Projects = () => {
                 onMouseEnter={() => setHoverIndex(index)}
                 onMouseLeave={() => setHoverIndex(null)}
                 onMouseMove={(e) => handleMouseMove(e, index)}
-                onClick={() => setProjectModalVisible(true)} // Open Modal on Click
+                onClick={() => handleProjectClick(project)}
               >
                 <div className="text-sm sm:text-sm md:text-base lg:text-xl text-gray-600 font-medium sm:mr-4 mb-4">
                   {String(project.id).padStart(2, "0")}
@@ -67,7 +87,7 @@ const Projects = () => {
                 </div>
               </div>
 
-              {hoverIndex === index && (
+              {hoverIndex === index && !isModalOpen && (
                 <div
                   ref={(el) => (imageRefs.current[index] = el)}
                   className="absolute top-10 left-40 pointer-events-none sm:block hidden"
@@ -88,11 +108,14 @@ const Projects = () => {
           ))}
         </div>
       )}
-      {/* Modal with GSAP Transition */}
-      {isModalOpen && (
+      {isModalOpen && activeProject && (
         <ProjectModal
           isModalOpen={isModalOpen}
-          setProjectModalVisible={setProjectModalVisible}
+          setProjectModalVisible={(isVisible) => {
+            if (!isVisible) setHoverIndex(null);
+            setProjectModalVisible(isVisible);
+          }}
+          activeProject={activeProject}
         />
       )}
     </div>
