@@ -10,13 +10,13 @@ const projects = [
     image: "/Project/WarrantEase.png",
     link: "https://warrantease.netlify.app/",
   },
-  {
-    id: 2,
-    title: "Portfolio",
-    description: "Front-End Development / Personal Portfolio",
-    image: "/Project/Portfolio.png",
-    link: "https://riteshcodes.netlify.app/",
-  },
+  // {
+  //   id: 2,
+  //   title: "Portfolio",
+  //   description: "Front-End Development / Personal Portfolio",
+  //   image: "/Project/Portfolio.png",
+  //   link: "https://riteshcodes.netlify.app/",
+  // },
 ];
 
 const Projects = () => {

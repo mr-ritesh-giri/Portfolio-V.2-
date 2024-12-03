@@ -8,12 +8,6 @@ const projects = [
     title: "WarrantEase - Appliance Maintenance & Warranty Tracker",
     shortDes:
       "WarrantEase is a user-friendly application designed to help you keep track of your appliances, maintenance schedules and warranty periods. With this app, you can effortlessly store appliance details and receive timely reminders for upcoming maintenance tasks or warranty expirations.",
-    features: [
-      "<strong>Add Devices</strong>: Easily input your appliances' key information such as type, model, make, purchase date, and warranty period.",
-      "<strong>Track Maintenance</strong>: Set reminders for upcoming maintenance and warranty expiration dates to keep your appliances in top condition.",
-      "<strong>Service History</strong>: Maintain a detailed log of past services and repairs for better tracking and management.",
-      "<strong>Reminders & Notifications</strong>: Receive timely alerts a week before your scheduled service or warranty expiration. Customizable notification settings available.",
-    ],
     image: "/Project/WarrantEase.png",
     screenshots: [
       "/ProjectPopup/wehome.png",
