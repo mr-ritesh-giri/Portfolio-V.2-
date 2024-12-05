@@ -28,6 +28,42 @@ function App() {
     };
   }, [viewState]);
 
+  useEffect(() => {
+    const blockActions = (event) => {
+      if (
+        event.key === "F12" ||
+        ((event.ctrlKey || event.metaKey) &&
+          event.shiftKey &&
+          ["I", "J"].includes(event.key)) ||
+        ((event.ctrlKey || event.metaKey) && event.key === "U")
+      ) {
+        event.preventDefault();
+      }
+    };
+
+    const blockRightClick = (event) => {
+      event.preventDefault();
+    };
+
+    const detectConsoleOpen = () => {
+      const devtools = /./;
+      devtools.toString = function () {
+        console.clear();
+        return "DevTools is blocked!";
+      };
+      console.log(devtools);
+    };
+
+    window.addEventListener("keydown", blockActions);
+    window.addEventListener("contextmenu", blockRightClick);
+    detectConsoleOpen();
+
+    return () => {
+      window.removeEventListener("keydown", blockActions);
+      window.removeEventListener("contextmenu", blockRightClick);
+    };
+  }, []);
+
   return (
     <div className="select-none">
       <>
