@@ -6,9 +6,7 @@ import PortfolioBottom from "./components/Layout/PortfolioBottom";
 import "./App.css";
 
 function App() {
-  const { viewState, windowWidth, toggleView } = useAppContext();
-  const isMobile = windowWidth < 1760;
-  const isDesktop = windowWidth >= 1760;
+  const { viewState, windowWidth } = useAppContext();
 
   // Handling smooth scroll (using Lenis)
   useEffect(() => {

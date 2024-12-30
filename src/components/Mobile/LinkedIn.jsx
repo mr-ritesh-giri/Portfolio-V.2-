@@ -1,17 +1,11 @@
 import React from "react";
-import {
-  FaBirthdayCake,
-  FaBriefcase,
-  FaCalendarAlt,
-  FaLink,
-} from "react-icons/fa";
 import VisitProfile from "../Layout/VisitProfile";
 
 const LinkedIn = () => {
   const user = {
     name: "Ritesh Giri",
     bio: "FrontEnd Developer | Innovating User Experience!💡",
-    profileImage: "public/Twitter/profileimage.jpg",
+    profileImage: "/Twitter/profileimage.jpg",
     dob: "April 21, 2005",
     joinDate: "January 2023",
     birth: "Shamli, Uttar Pradesh, India",
