@@ -1,7 +1,9 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import { FaMobileAlt, FaDesktop } from "react-icons/fa";
-import { HeroPortfolio, Iphone } from "../Pages";
 import { useAppContext } from "../../context/AppContext";
+
+const HeroPortfolio = lazy(() => import("../Pages/HeroPortfolio"));
+const Iphone = lazy(() => import("../Pages/Iphone"));
 
 const PortfolioTop = () => {
   const { toggleView, viewState, windowWidth } = useAppContext();
@@ -12,24 +14,34 @@ const PortfolioTop = () => {
         <>
           {viewState.showPhone && (
             <div className="x:px-12 sm:w-1/3 w-full mx-auto">
-              <Iphone />
+              {/* Suspense for lazy loading Iphone */}
+              <Suspense fallback={<></>}>
+                <Iphone />
+              </Suspense>
             </div>
           )}
           {viewState.showPortfolio && (
             <section className="relative mx-auto">
-              <HeroPortfolio />
+              {/* Suspense for lazy loading HeroPortfolio */}
+              <Suspense fallback={<></>}>
+                <HeroPortfolio />
+              </Suspense>
             </section>
           )}
         </>
       ) : (
         <>
           <div className="x:px-12 sm:w-1/3 w-full mx-auto">
-            <Iphone />
+            <Suspense fallback={<></>}>
+              <Iphone />
+            </Suspense>
           </div>
 
           {viewState.showPortfolio && (
             <section className="relative px-12 2xl:p-0">
-              <HeroPortfolio />
+              <Suspense fallback={<></>}>
+                <HeroPortfolio />
+              </Suspense>
             </section>
           )}
         </>

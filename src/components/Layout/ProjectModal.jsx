@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import CustomButton from "../Buttons/CustomButton";
-import { projects } from "../../constants/constant";
+import { projectModalDetails } from "../../constants/constant";
 
 const ProjectModal = ({ isModalOpen, setProjectModalVisible, className }) => {
   const [isFullScreen, setFullScreen] = useState(false);
@@ -77,7 +77,7 @@ const ProjectModal = ({ isModalOpen, setProjectModalVisible, className }) => {
       </div>
 
       {/* Modal Content */}
-      {projects.map((project, index) => (
+      {projectModalDetails.map((project, index) => (
         <div
           key={index}
           className={`max-w-[1400px] mx-auto ${
@@ -114,7 +114,6 @@ const ProjectModal = ({ isModalOpen, setProjectModalVisible, className }) => {
               <img
                 src={project.image}
                 alt={project.title}
-                loading="lazy"
                 className="w-full h-full object-cover"
               />
             </div>
@@ -132,7 +131,6 @@ const ProjectModal = ({ isModalOpen, setProjectModalVisible, className }) => {
                   <img
                     src={image}
                     alt={`Screenshot ${idx + 1}`}
-                    loading="lazy"
                     className="w-full h-full object-cover rounded-lg shadow-lg mb-2"
                   />
                   <span>({idx + 1})</span>

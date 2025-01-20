@@ -50,13 +50,23 @@ export const projects = [
     image: "/Project/WarrantEase.png",
     link: "https://warrantease.netlify.app/",
   },
-  // {
-  //   id: 2,
-  //   title: "Portfolio",
-  //   description: "Front-End Development / Personal Portfolio",
-  //   image: "/Project/Portfolio.png",
-  //   link: "https://riteshcodes.netlify.app/",
-  // },
+];
+
+export const projectModalDetails = [
+  {
+    id: 1,
+    title: "WarrantEase - Appliance Maintenance & Warranty Tracker",
+    shortDes:
+      "WarrantEase is a user-friendly application designed to help you keep track of your appliances, maintenance schedules and warranty periods. With this app, you can effortlessly store appliance details and receive timely reminders for upcoming maintenance tasks or warranty expirations.",
+    image: "/Project/WarrantEase.png",
+    screenshots: [
+      "/ProjectPopup/wehome.png",
+      "/ProjectPopup/addapp.png",
+      "/ProjectPopup/viewapp.png",
+      "/ProjectPopup/features.png",
+    ],
+    link: "https://warrantease.netlify.app/",
+  },
 ];
 
 export const socialLinks = [
