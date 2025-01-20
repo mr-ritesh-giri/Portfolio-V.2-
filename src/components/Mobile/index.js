@@ -1,5 +1,4 @@
 import AboutMe from "./AboutMe";
-import AppProjects from "./AppProjects";
 import GitHub from "./Github";
 import LinkedIn from "./LinkedIn";
 import PasswordGenerator from "./PasswordGenerator";
@@ -10,7 +9,6 @@ import Twitter from "./Twitter";
 
 export {
   AboutMe,
-  AppProjects,
   GitHub,
   LinkedIn,
   PasswordGenerator,

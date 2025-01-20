@@ -9,25 +9,7 @@ import {
   PasswordGenerator,
   GitHub,
 } from "../Mobile/index";
-
-const apps = [
-  { id: 1, title: "About", imgSrc: "/App/freelancer.png" },
-  { id: 2, title: "Skills", imgSrc: "/App/skill.png" },
-  {
-    id: 3,
-    title: "Password Generator",
-    imgSrc: "/App/password-svgrepo-com.svg",
-  },
-  {
-    id: 4,
-    title: "Tik Tak Toe",
-    imgSrc: "/App/tic-tac-toe-svgrepo-com.svg",
-  },
-  { id: 5, title: "Tools", imgSrc: "/App/tools-and-utensils.png" },
-  { id: 6, title: "GitHub", imgSrc: "/App/512x512-logo-27148.png" },
-  { id: 7, title: "Twitter", imgSrc: "/App/twitter-x-logo-42554.png" },
-  { id: 8, title: "LinkedIn", imgSrc: "/App/linkedin-logo-png-1854.png" },
-];
+import { apps } from "../../constants/constant";
 
 const Background = () => {
   const [activeApp, setActiveApp] = useState(null);
@@ -74,6 +56,7 @@ const Background = () => {
                   <img
                     src={app.imgSrc}
                     alt={app.title}
+                    loading="lazy"
                     className="w-full h-full object-cover rounded-lg p-1"
                   />
                 </div>

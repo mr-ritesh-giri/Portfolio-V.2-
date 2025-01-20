@@ -1,25 +1,7 @@
 import React from "react";
-import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { socialLinks } from "../../constants/constant";
 
 const About = () => {
-  const socialLinks = [
-    {
-      icon: <FaGithub />,
-      name: "GitHub",
-      link: "https://github.com/mr-ritesh-giri",
-    },
-    {
-      icon: <FaLinkedin />,
-      name: "LinkedIn",
-      link: "https://www.linkedin.com/in/ritesh-giri-b8b770242/",
-    },
-    {
-      icon: <FaTwitter />,
-      name: "Twitter",
-      link: "https://x.com/mr_riteshgiri",
-    },
-  ];
-
   return (
     <>
       <div className="flex flex-col justify-center items-center h-screen w-full bg-white text-black">
@@ -40,7 +22,7 @@ const About = () => {
               className="flex items-center justify-start w-auto h-12 mx-1 sm:mx-3 px-3 sm:text-3xl gap-2 sm:gap-4 border border-gray-500 rounded-full p-2 text-black hover:scale-110 hover:border-violet-700 cursor-pointer transition duration-300"
             >
               <span className="flex items-center justify-center text-2xl sm:text-3xl">
-                {social.icon}
+                {<social.icon />}
               </span>
               <span className="text-xs sm:text-lg font-semibold">
                 {social.name}

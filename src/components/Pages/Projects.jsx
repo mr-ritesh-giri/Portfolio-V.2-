@@ -1,23 +1,7 @@
 import React, { useState, useRef, useCallback, useEffect } from "react";
 import { gsap } from "gsap";
 import { ProjectModal } from "../Layout";
-
-const projects = [
-  {
-    id: 1,
-    title: "WarrantEase",
-    description: "Front-End Development / Maintenance Tracking Tool",
-    image: "/Project/WarrantEase.png",
-    link: "https://warrantease.netlify.app/",
-  },
-  // {
-  //   id: 2,
-  //   title: "Portfolio",
-  //   description: "Front-End Development / Personal Portfolio",
-  //   image: "/Project/Portfolio.png",
-  //   link: "https://riteshcodes.netlify.app/",
-  // },
-];
+import { projects } from "../../constants/constant";
 
 const Projects = () => {
   const [hoverIndex, setHoverIndex] = useState(null);
@@ -100,6 +84,7 @@ const Projects = () => {
                   <img
                     src={project.image}
                     alt={project.title}
+                    loading="lazy"
                     className="w-full h-full rounded-lg shadow-lg"
                   />
                 </div>
@@ -108,6 +93,7 @@ const Projects = () => {
           ))}
         </div>
       )}
+
       {isModalOpen && activeProject && (
         <ProjectModal
           isModalOpen={isModalOpen}

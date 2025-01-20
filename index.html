@@ -6,11 +6,27 @@
       rel="icon"
       type="image/svg+xml"
       href="Images/Master Image.jpg"
+      loading="lazy"
     />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
       content="Explore Ritesh Giri's portfolio showcasing skills in React, HTML, CSS, and JavaScript."
+    />
+    <meta
+      property="og:title"
+      content="Ritesh Giri | Front-End Developer Portfolio"
+    />
+    <meta
+      property="og:description"
+      content="Explore Ritesh Giri's portfolio showcasing skills in React, HTML, CSS, and JavaScript."
+    />
+    <meta property="og:image" content="Images/Master Image.jpg" />
+    <meta property="og:url" content="https://ritesh-giri-portfolio.com" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self' https://unpkg.com; style-src 'self' https://fonts.googleapis.com;"
     />
     <title>Ritesh Giri | Front-End Developer Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -18,9 +34,10 @@
       rel="stylesheet"
       href="https://unpkg.com/lenis@1.1.16/dist/lenis.css"
     />
+    <link rel="preload" href="https://fonts.googleapis.com" as="style" />
+    <link rel="preload" as="script" href="/src/main.jsx" />
   </head>
   <body>
-    <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

@@ -8,17 +8,17 @@ import {
 import VisitProfile from "../Layout/VisitProfile";
 import ScrollLayout from "../Layout/ScrollLayout";
 
-const Twitter = () => {
-  const user = {
-    name: "Ritesh Giri",
-    username: "@mr_riteshgiri",
-    bio: "Passionate FrontEnd Developer 🚀 | Turning ideas into interactive experiences | Constantly learning and evolving in the world of web development | Software developer/Programmer/Software engineer",
-    profileImage: "/Twitter/profileimage.jpg",
-    dob: "April 21, 2005",
-    joinDate: "January 2023",
-    twitterLink: "https://x.com/mr_riteshgiri",
-  };
+const user = {
+  name: "Ritesh Giri",
+  username: "@mr_riteshgiri",
+  bio: "Passionate FrontEnd Developer 🚀 | Turning ideas into interactive experiences | Constantly learning and evolving in the world of web development | Software developer/Programmer/Software engineer",
+  profileImage: "/Twitter/profileimage.jpg",
+  dob: "April 21, 2005",
+  joinDate: "January 2023",
+  twitterLink: "https://x.com/mr_riteshgiri",
+};
 
+const Twitter = () => {
   return (
     <ScrollLayout className="bg-black text-white h-[70vh]">
       {/* Banner Section */}
@@ -36,6 +36,7 @@ const Twitter = () => {
           <img
             src={user.profileImage}
             alt={user.name}
+            loading="lazy"
             className="w-24 h-24 rounded-full border-3 border-black"
           />
           <div className="flex-1">
@@ -58,6 +59,7 @@ const Twitter = () => {
               riteshcodes.netlify.app
             </a>
           </div>
+
           {/* Additional Info Section */}
           <div className="flex gap-4 mt-2 text-gray-400">
             <div className="flex items-center gap-2">

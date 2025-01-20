@@ -1,31 +1,9 @@
 import React from "react";
-import {
-  FaGithub,
-  FaLinkedin,
-  FaTwitter,
-  FaRegCommentDots,
-} from "react-icons/fa";
-import "./HeroPortfolio.css";
-import Spline from "@splinetool/react-spline";
 import Button from "../Layout/Button";
-
-const socialLinks = [
-  {
-    icon: <FaGithub />,
-    name: "GitHub",
-    link: "https://github.com/mr-ritesh-giri",
-  },
-  {
-    icon: <FaLinkedin />,
-    name: "LinkedIn",
-    link: "https://www.linkedin.com/in/ritesh-giri-b8b770242/",
-  },
-  {
-    icon: <FaTwitter />,
-    name: "Twitter",
-    link: "https://x.com/mr_riteshgiri",
-  },
-];
+import Spline from "@splinetool/react-spline";
+import { FaRegCommentDots } from "react-icons/fa";
+import { socialLinks } from "../../constants/constant";
+import "./HeroPortfolio.css";
 
 function HeroPortfolio() {
   return (
@@ -62,7 +40,7 @@ function HeroPortfolio() {
             >
               <Button
                 className="p-2 md:p-3 text-xl x:text-2xl md:text-3xl border-2 border-violet-500 rounded-full hover:scale-110 transition ease-in-out"
-                children={social.icon}
+                children={<social.icon />}
               />
             </a>
           ))}

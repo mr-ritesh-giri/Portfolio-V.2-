@@ -1,20 +1,7 @@
-import React from "react";
 import VisitProfile from "../Layout/VisitProfile";
+import { linkedinUserData } from "../../constants/constant";
 
 const LinkedIn = () => {
-  const user = {
-    name: "Ritesh Giri",
-    bio: "FrontEnd Developer | Innovating User Experience!💡",
-    profileImage: "/Twitter/profileimage.jpg",
-    dob: "April 21, 2005",
-    joinDate: "January 2023",
-    birth: "Shamli, Uttar Pradesh, India",
-    linkedIn: "https://www.linkedin.com/in/ritesh-giri-b8b770242/",
-    portfolio: "https://riteshcodes.netlify.app",
-    followers: 12,
-    connections: 7,
-  };
-
   return (
     <div className="bg-black text-white">
       {/* Banner Section */}
@@ -30,13 +17,16 @@ const LinkedIn = () => {
         <div className="flex flex-col items-start">
           {/* Profile Picture */}
           <img
-            src={user.profileImage}
-            alt={user.name}
+            src={linkedinUserData.profileImage}
+            alt={linkedinUserData.name}
+            loading="lazy"
             className="w-24 h-24 rounded-full border-3 border-black"
           />
           <div className="flex-1">
-            <h1 className="text-2xl font-semibold">{user.name}</h1>
-            <p className="text-gray-300 mt-1 text-base">{user.bio}</p>
+            <h1 className="text-2xl font-semibold">{linkedinUserData.name}</h1>
+            <p className="text-gray-300 mt-1 text-base">
+              {linkedinUserData.bio}
+            </p>
           </div>
         </div>
 
@@ -44,27 +34,29 @@ const LinkedIn = () => {
 
         <div className="flex flex-col items-start my-2 text-gray-400 text-sm">
           <div className="flex items-center gap-2">
-            <div>{user.birth}</div>
+            <div>{linkedinUserData.birth}</div>
           </div>
           <div className="text-blue-400 mt-1">
-            <a href="https://riteshcodes.netlify.app">{user.portfolio}</a>
+            <a href="https://riteshcodes.netlify.app">
+              {linkedinUserData.portfolio}
+            </a>
           </div>
         </div>
 
         {/* Action Buttons */}
         <div className="mt-3 text-sm flex gap-3">
           <div className="text-blue-400">
-            <span>{user.followers}</span> Followers
+            <span>{linkedinUserData.followers}</span> Followers
           </div>
           <div className="text-blue-400">
             {" "}
-            <span>{user.connections}</span> Connections
+            <span>{linkedinUserData.connections}</span> Connections
           </div>
         </div>
 
         {/* Link Button */}
         <div className="mt-10 flex justify-center hover:scale-105">
-          <a href={user.linkedIn} target="_blank">
+          <a href={linkedinUserData.linkedIn} target="_blank">
             <VisitProfile />
           </a>
         </div>

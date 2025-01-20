@@ -59,6 +59,7 @@ const Skills = () => {
             >
               <img
                 src={tech.img}
+                loading="lazy"
                 alt={`${tech.name} logo`}
                 className="w-9 h-9 x:w-11 x:h-11 mr-5"
               />

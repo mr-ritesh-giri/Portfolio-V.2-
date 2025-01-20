@@ -9,6 +9,7 @@ const AboutMe = () => {
           <img
             src="/App/freelancer.png"
             alt="About Me"
+            loading="lazy"
             className="w-full h-full object-cover object-center p-6"
           />
         </div>

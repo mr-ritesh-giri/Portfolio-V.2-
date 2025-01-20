@@ -42,6 +42,7 @@ const Tools = () => {
             <img
               src={tool.img}
               alt={`${tool.title} logo`}
+              loading="lazy"
               className="w-16 h-16 sm:w-20 sm:h-20 object-contain rounded-md"
             />
             <div>

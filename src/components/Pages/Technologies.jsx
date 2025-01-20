@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { gsap } from "gsap";
 import { Draggable } from "gsap/Draggable";
+import { technologies } from "../../constants/constant";
 
 gsap.registerPlugin(Draggable);
 
@@ -48,28 +49,7 @@ const Technologies = () => {
       {/* Skills Section */}
       <div className="flex-1 p-2 sm:p-6 rounded-lg shadow-lg overflow-hidden">
         <div className="grid x:grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 sm:gap-6 gap-3">
-          {[
-            { img: "/Tech/HTML.webp", name: "HTML", description: "Markup" },
-            { img: "/Tech/CSS.svg", name: "CSS", description: "Styling" },
-            {
-              img: "/Tech/JS.png",
-              name: "JavaScript",
-              description: "Programming",
-            },
-            { img: "/Tech/React.svg", name: "React", description: "Framework" },
-            {
-              img: "/Tech/Tailwind.svg",
-              name: "TailwindCSS",
-              description: "Framework",
-            },
-            { img: "/Tech/GSAP.svg", name: "GSAP", description: "Animation" },
-            {
-              img: "/Tech/LocomotiveJs.png",
-              name: "Locomotive JS",
-              description: "Scroll",
-            },
-            { img: "/Tech/GIT.svg", name: "Git", description: "Version" },
-          ].map((tech, index) => (
+          {technologies.map((tech, index) => (
             <div
               key={index}
               className="draggable flex items-center bg-gray-950 px-2 py-3 sm:p-4 xl:p-6 rounded-2xl shadow-md border border-gray-600 hover:shadow-xl hover:border-violet-500"
@@ -78,6 +58,7 @@ const Technologies = () => {
                 <img
                   src={tech.img}
                   alt={`${tech.name} logo`}
+                  loading="lazy"
                   className="w-full h-full"
                 />
               </div>
