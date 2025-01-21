@@ -1,6 +1,6 @@
-import React from "react";
+import React, { Suspense } from "react";
 import Button from "../Layout/Button";
-import Spline from "@splinetool/react-spline";
+const LazySpline = React.lazy(() => import("@splinetool/react-spline"));
 import { FaRegCommentDots } from "react-icons/fa";
 import { socialLinks } from "../../constants/constant";
 import "./HeroPortfolio.css";
@@ -46,12 +46,14 @@ function HeroPortfolio() {
           ))}
         </div>
       </div>
-      {/* Spline 3D Model */}
+      {/* Lazy Loaded Spline 3D Model */}
       <div className="hidden lg:block justify-center items-center h-screen w-full min-w-[400px] xl:min-x-w-[500px] 2xl:min-w-[600px]">
-        <Spline
-          scene="https://prod.spline.design/DVe8fLgj4Kw25-rZ/scene.splinecode"
-          className="w-full h-full"
-        />
+        <Suspense fallback={<h1 className="text-8xl">Loading</h1>}>
+          <LazySpline
+            scene="https://prod.spline.design/DVe8fLgj4Kw25-rZ/scene.splinecode"
+            className="w-full h-full"
+          />
+        </Suspense>
       </div>
       <div className="hidden lg:block absolute bottom-0 right-0 w-full h-16 bg-black z-10"></div>
     </div>
