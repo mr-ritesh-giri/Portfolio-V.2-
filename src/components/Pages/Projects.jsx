@@ -1,7 +1,7 @@
 import React, { useState, useRef, useCallback, useEffect } from "react";
 import { gsap } from "gsap";
 import { ProjectModal } from "../Layout";
-import { projects } from "../../constants/constant";
+import { projectModalDetails, projects } from "../../constants/constant";
 
 const Projects = () => {
   const [hoverIndex, setHoverIndex] = useState(null);
@@ -35,8 +35,20 @@ const Projects = () => {
   const handleProjectClick = (project) => {
     if (isLargeScreen) {
       setHoverIndex(null);
-      setActiveProject(project);
-      setProjectModalVisible(true);
+
+      const projectDetail = projectModalDetails.find(
+        (item) => item.id === project.id
+      );
+
+      if (projectDetail) {
+        setActiveProject(projectDetail);
+        setProjectModalVisible(true);
+      } else {
+        console.error(
+          "❌ Project not found in projectModalDetails:",
+          project.id
+        );
+      }
     } else {
       window.open(project.link, "_blank");
     }

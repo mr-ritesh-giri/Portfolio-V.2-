@@ -81,12 +81,13 @@ export const projectModalDetails = [
       "IntelliHire is an AI-powered mock interview platform that simulates real interview experiences. It adapts questions based on your profile, domain, and experience level, provides instant feedback, and helps you practice effectively for your next interview.",
     image: "/Project/IntelliHire.png",
     screenshots: [
-      "/ProjectPopup/wehome.png",
-      "/ProjectPopup/addapp.png",
-      "/ProjectPopup/viewapp.png",
-      "/ProjectPopup/features.png",
+      "/ProjectPopup/IntelliHire/1.png",
+      "/ProjectPopup/IntelliHire/2.png",
+      "/ProjectPopup/IntelliHire/3.png",
+      "/ProjectPopup/IntelliHire/4.png",
     ],
     link: "https://intellihiree.netlify.app/",
+    github: "https://github.com/mr-ritesh-giri/IntelliHire",
   },
   {
     id: 2,
@@ -95,12 +96,14 @@ export const projectModalDetails = [
       "Golf Family is a simple static website built using HTML, CSS, JavaScript, and GSAP. It features smooth animations and creative interactions to enhance the user experience.",
     image: "/Project/GolfFamily.png",
     screenshots: [
-      "/ProjectPopup/wehome.png",
-      "/ProjectPopup/addapp.png",
-      "/ProjectPopup/viewapp.png",
-      "/ProjectPopup/features.png",
+      "/ProjectPopup/GolfFamily/1.png",
+      "/ProjectPopup/GolfFamily/2.png",
+      "/ProjectPopup/GolfFamily/3.png",
+      "/ProjectPopup/GolfFamily/4.png",
     ],
     link: "https://fluffy-longma-b81432.netlify.app/",
+    github:
+      "https://github.com/mr-ritesh-giri/Family-Golf/tree/main/Family-Golf",
   },
   {
     id: 3,
@@ -109,12 +112,13 @@ export const projectModalDetails = [
       "TooGoodCo is a static e-commerce website built with HTML, CSS, JavaScript, and GSAP. With a sleek design and smooth animations, it’s crafted to make users fall in love at first glance.",
     image: "/Project/TooGood.png",
     screenshots: [
-      "/ProjectPopup/wehome.png",
-      "/ProjectPopup/addapp.png",
-      "/ProjectPopup/viewapp.png",
-      "/ProjectPopup/features.png",
+      "/ProjectPopup/TooGood/1.png",
+      "/ProjectPopup/TooGood/2.png",
+      "/ProjectPopup/TooGood/3.png",
+      "/ProjectPopup/TooGood/4.png",
     ],
     link: "https://toogoodproducts.netlify.app/",
+    github: "https://github.com/mr-ritesh-giri/TooGood.Co",
   },
   {
     id: 4,
@@ -123,12 +127,13 @@ export const projectModalDetails = [
       "WarrantEase is a user-friendly application designed to help you keep track of your appliances, maintenance schedules and warranty periods. With this app, you can effortlessly store appliance details and receive timely reminders for upcoming maintenance tasks or warranty expirations.",
     image: "/Project/WarrantEase.png",
     screenshots: [
-      "/ProjectPopup/wehome.png",
-      "/ProjectPopup/addapp.png",
-      "/ProjectPopup/viewapp.png",
-      "/ProjectPopup/features.png",
+      "/ProjectPopup/WarrantEase/wehome.png",
+      "/ProjectPopup/WarrantEase/addapp.png",
+      "/ProjectPopup/WarrantEase/viewapp.png",
+      "/ProjectPopup/WarrantEase/features.png",
     ],
     link: "https://warrantease.netlify.app/",
+    github: "https://github.com/mr-ritesh-giri/WarrantEase",
   },
 ];
 

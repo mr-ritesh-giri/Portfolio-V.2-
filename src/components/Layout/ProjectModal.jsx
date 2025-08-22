@@ -1,9 +1,13 @@
 import React, { useState, useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import CustomButton from "../Buttons/CustomButton";
-import { projectModalDetails } from "../../constants/constant";
 
-const ProjectModal = ({ isModalOpen, setProjectModalVisible, className }) => {
+const ProjectModal = ({
+  isModalOpen,
+  setProjectModalVisible,
+  className,
+  activeProject,
+}) => {
   const [isFullScreen, setFullScreen] = useState(false);
   const modalRef = useRef(null);
   const [isLargeScreen, setIsLargeScreen] = useState(window.innerWidth >= 1024);
@@ -23,13 +27,13 @@ const ProjectModal = ({ isModalOpen, setProjectModalVisible, className }) => {
 
   // GSAP animation
   useEffect(() => {
-    if (isModalOpen) {
+    if (isModalOpen && modalRef.current) {
       gsap.fromTo(
         modalRef.current,
-        { y: "100%", opacity: 0 }, // Start animation
-        { y: "0%", opacity: 1, duration: 0.6, ease: "power4.out" } // End animation
+        { y: "100%", opacity: 0 },
+        { y: "0%", opacity: 1, duration: 0.6, ease: "power4.out" }
       );
-    } else {
+    } else if (modalRef.current) {
       gsap.to(modalRef.current, {
         y: "100%",
         opacity: 0,
@@ -38,6 +42,8 @@ const ProjectModal = ({ isModalOpen, setProjectModalVisible, className }) => {
       });
     }
   }, [isModalOpen]);
+
+  if (!activeProject) return null;
 
   return (
     <div
@@ -77,56 +83,55 @@ const ProjectModal = ({ isModalOpen, setProjectModalVisible, className }) => {
       </div>
 
       {/* Modal Content */}
-      {projectModalDetails.map((project, index) => (
-        <div
-          key={index}
-          className={`max-w-[1400px] mx-auto ${
-            isFullScreen
-              ? "bg-black text-white py-8 lg:py-24"
-              : "bg-white text-black p-5 md:p-10"
-          }`}
-        >
-          {/* Main Content Section */}
-          <div className="flex flex-col-reverse lg:flex-row justify-between items-start h-full">
-            {/* Text and Project Details */}
-            <div className="max-w-[700px] xl:max-w-[800px] w-full">
-              <h1 className="text-xl x:text-xl sm:base md:text-3xl lg:text-2xl xl:text-4xl mb-2 xl:mb-6">
-                {project.title}
-              </h1>
-              <p className="text-sm x:text-base md:text-lg lg:text-base xl:text-lg mb-3 xl:mb-6 text-gray-500">
-                {project.shortDes}
-              </p>
-              <div className="space-x-3 mb-3 md:mb-0 text-white">
-                <CustomButton
-                  text="Live Link"
-                  href={project.link}
-                  isFullScreen={isFullScreen}
-                />
-                <CustomButton
-                  text="GitHub"
-                  href={null}
-                  isFullScreen={isFullScreen}
-                />
-              </div>
-            </div>
-            {/* Project Image */}
-            <div className="mb-2 lg:mb-0 w-full lg:w-96">
-              <img
-                src={project.image}
-                alt={project.title}
-                className="w-full h-full object-cover"
+      <div
+        className={`max-w-[1400px] mx-auto ${
+          isFullScreen
+            ? "bg-black text-white py-8 lg:py-24"
+            : "bg-white text-black p-5 md:p-10"
+        }`}
+      >
+        {/* Main Content Section */}
+        <div className="flex flex-col-reverse lg:flex-row justify-between items-start h-full">
+          {/* Text and Project Details */}
+          <div className="max-w-[700px] xl:max-w-[800px] w-full">
+            <h1 className="text-xl x:text-xl sm:base md:text-3xl lg:text-2xl xl:text-4xl mb-2 xl:mb-6">
+              {activeProject.title}
+            </h1>
+            <p className="text-sm x:text-base md:text-lg lg:text-base xl:text-lg mb-3 xl:mb-6 text-gray-500">
+              {activeProject.description || activeProject.shortDes}
+            </p>
+            <div className="space-x-3 mb-3 md:mb-0 text-white">
+              <CustomButton
+                text="Live Link"
+                href={activeProject.link}
+                isFullScreen={isFullScreen}
+              />
+              <CustomButton
+                text="GitHub"
+                href={activeProject.github || null}
+                isFullScreen={isFullScreen}
               />
             </div>
           </div>
-          {/* Divider */}
-          <hr className="hidden lg:block my-6 border-t-2 border-gray-900" />
-          {/* Project Screenshots */}
+          {/* Project Image */}
+          <div className="mb-2 lg:mb-0 w-full lg:w-96">
+            <img
+              src={activeProject.image}
+              alt={activeProject.title}
+              className="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+        {/* Divider */}
+        <hr className="hidden lg:block my-6 border-t-2 border-gray-900" />
+        {/* Project Screenshots */}
+        {activeProject.screenshots && activeProject.screenshots.length > 0 && (
           <div className={`${isFullScreen ? "block" : "hidden lg:block"}`}>
             <h1 className="text-2xl sm:text-3xl xl:text-3xl mb-4">
               Project Screenshots
             </h1>
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
-              {project.screenshots.map((image, idx) => (
+              {activeProject.screenshots.map((image, idx) => (
                 <div key={idx} className="w-full text-center mb-4">
                   <img
                     src={image}
@@ -138,8 +143,8 @@ const ProjectModal = ({ isModalOpen, setProjectModalVisible, className }) => {
               ))}
             </div>
           </div>
-        </div>
-      ))}
+        )}
+      </div>
     </div>
   );
 };
