@@ -45,8 +45,29 @@ export const apps = [
 export const projects = [
   {
     id: 1,
+    title: "IntelliHire",
+    description: "AI-Powered Mock Interview / Voice Interaction Tool",
+    image: "/Project/IntelliHire.png",
+    link: "https://intellihiree.netlify.app/",
+  },
+  {
+    id: 2,
+    title: "Golf Family",
+    description: "Front-end Development / Golf Leisure Site",
+    image: "/Project/GolfFamily.png",
+    link: "https://fluffy-longma-b81432.netlify.app/",
+  },
+  {
+    id: 3,
+    title: "Too Good Co.",
+    description: "Empowerment E-Commerce / Lifestyle Product Showcase",
+    image: "/Project/TooGood.png",
+    link: "https://toogoodproducts.netlify.app/",
+  },
+  {
+    id: 4,
     title: "WarrantEase",
-    description: "Front-End Development / Maintenance Tracking Tool",
+    description: "Warranty Management / Maintenance Tracking Platform",
     image: "/Project/WarrantEase.png",
     link: "https://warrantease.netlify.app/",
   },
@@ -55,6 +76,48 @@ export const projects = [
 export const projectModalDetails = [
   {
     id: 1,
+    title: "IntelliHire - AI Mock Interview Bot",
+    shortDes:
+      "IntelliHire is an AI-powered mock interview platform that simulates real interview experiences. It adapts questions based on your profile, domain, and experience level, provides instant feedback, and helps you practice effectively for your next interview.",
+    image: "/Project/IntelliHire.png",
+    screenshots: [
+      "/ProjectPopup/wehome.png",
+      "/ProjectPopup/addapp.png",
+      "/ProjectPopup/viewapp.png",
+      "/ProjectPopup/features.png",
+    ],
+    link: "https://intellihiree.netlify.app/",
+  },
+  {
+    id: 2,
+    title: "Golf Family - Animated Static Website",
+    shortDes:
+      "Golf Family is a simple static website built using HTML, CSS, JavaScript, and GSAP. It features smooth animations and creative interactions to enhance the user experience.",
+    image: "/Project/GolfFamily.png",
+    screenshots: [
+      "/ProjectPopup/wehome.png",
+      "/ProjectPopup/addapp.png",
+      "/ProjectPopup/viewapp.png",
+      "/ProjectPopup/features.png",
+    ],
+    link: "https://fluffy-longma-b81432.netlify.app/",
+  },
+  {
+    id: 3,
+    title: "TooGoodCo - Simple E-Commerce Website",
+    shortDes:
+      "TooGoodCo is a static e-commerce website built with HTML, CSS, JavaScript, and GSAP. With a sleek design and smooth animations, it’s crafted to make users fall in love at first glance.",
+    image: "/Project/TooGood.png",
+    screenshots: [
+      "/ProjectPopup/wehome.png",
+      "/ProjectPopup/addapp.png",
+      "/ProjectPopup/viewapp.png",
+      "/ProjectPopup/features.png",
+    ],
+    link: "https://toogoodproducts.netlify.app/",
+  },
+  {
+    id: 4,
     title: "WarrantEase - Appliance Maintenance & Warranty Tracker",
     shortDes:
       "WarrantEase is a user-friendly application designed to help you keep track of your appliances, maintenance schedules and warranty periods. With this app, you can effortlessly store appliance details and receive timely reminders for upcoming maintenance tasks or warranty expirations.",

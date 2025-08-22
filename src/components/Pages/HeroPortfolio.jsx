@@ -1,9 +1,9 @@
 import React, { Suspense } from "react";
 import Button from "../Layout/Button";
-const LazySpline = React.lazy(() => import("@splinetool/react-spline"));
 import { FaRegCommentDots } from "react-icons/fa";
 import { socialLinks } from "../../constants/constant";
 import "./HeroPortfolio.css";
+const LazySpline = React.lazy(() => import("@splinetool/react-spline"));
 
 function HeroPortfolio() {
   return (
@@ -46,6 +46,7 @@ function HeroPortfolio() {
           ))}
         </div>
       </div>
+
       {/* Lazy Loaded Spline 3D Model */}
       <div className="hidden lg:block justify-center items-center h-screen w-full min-w-[400px] xl:min-x-w-[500px] 2xl:min-w-[600px]">
         <Suspense fallback={<h1 className="text-8xl">Loading</h1>}>
